@@ -1,0 +1,39 @@
+2016/11/9
+更改list页面样式
+增加页面中的刷新按钮
+增加初始遮罩层
+tab_bar增加明显的删除按钮考虑在span标签中增加img
+
+工作计划表（后台可视化数据系统）
+11.15-1.15
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/template.js"> </script>
+</head>
+<body>
+　　<div id="ShowDiv">
+    　　</div>
+　　<textarea id="temp" style="display: none;">
+　　<table width="400" cellspacing="0" cellpadding="0" border="1">
+　　　　{for i in data}
+　　　　　　<tr>
+　　　　　　　　<td>${i.Name}</td>
+　　　　　　　　<td>${i.Big}</td>
+　　　　　　</tr>
+　　　　{/for}
+　　</table>
+　　</textarea>
+<script type="text/javascript">
+    var data = [
+        { Name: "关羽", Big: "龙卷旋风斩" },
+        { Name: "郭嘉", Big: "冰河爆裂破" },
+        { Name: "诸葛", Big: "卧龙光线" },
+    ]; //他妈的for循环多了一次
+    var result = TrimPath.processDOMTemplate("temp", data);
+    document.getElementById("ShowDiv").innerHTML = result;
+</script>
+</body>
+</html>

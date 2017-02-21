@@ -1,0 +1,18 @@
+#area_certain{
+    overflow: hidden;
+}
+#area_certain p{
+    float: left;
+}
+.icp{
+    float: left;
+}
+.clear{
+    clear: both;
+}
+.img,.loan,.choice,.contact{
+    float: left;
+}
+.choice{
+    margin-right: 20px;
+}

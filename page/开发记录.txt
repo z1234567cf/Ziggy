@@ -1,0 +1,1 @@
+spanFather.children("span").unbind("click"); //用于取消重复在span上添加点击事件。

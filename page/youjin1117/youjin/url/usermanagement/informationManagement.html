@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../js/noCashe.js"></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/user.css">
+    <link rel="stylesheet" href="../../js/popplug/popplug.css">
+    <link rel="stylesheet" href="../../css/new_pop.css">
+    <script src="../../js/jquery-1.12.4.js"></script>
+    <script src="../../js/popplug/popplug.js"></script>
+    <script src="../../js/js_date_plug/laydate.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/usermanagement/informationManagement.js"></script>
+</head>
+<body style="font-size: 12px;min-width: 1080px;min-height: 820px">
+    <div class="set">
+        <ul class="setUl">
+            <li id="refreash"><img src="../../images/user/bc_07.png" alt=""><span>刷新</span></li>
+            <li id="modify"><span>修改信息</span></li>
+            <li id="reset"><span>重置密码</span></li>
+            <li id="set"><span>限制/解除</span></li>
+            <li id="trace"><span>用户跟踪</span></li>
+            <li>
+                <span>
+                    <select name="" id="select">
+                        <option value="">全部</option>
+                        <option value="reg">注册日期</option>
+                        <option value="login">最后登录</option>
+                    </select>
+                </span>
+            </li>
+            <li class="dataSelection">
+                <span>日期范围：</span>
+                <input type="text" id="zcf_left_input" onclick="laydate()" placeholder="选择日期">
+                <span>-</span>
+                <input type="text" id="zcf_right_input" onclick="laydate()" placeholder="选择日期">
+            </li>
+        </ul>
+        <div class="input" id="search">
+            <input type="text" placeholder="请输入手机号">
+            <img src="../../images/user/后台2(1)_10.png" alt="">
+        </div>
+    </div>
+    <div class="table" id="table">
+        <table >
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>用户</th>
+                <th>手机号</th>
+                <th>U币</th>
+                <th>状态</th>
+                <th>活跃情况</th>
+                <th>时间</th>
+                <th>三方账户</th>
+                <th>标签</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>100</li>-->
+                        <!--<li></li>-->
+                        <!--<li></li>-->
+                    <!--</ul>-->
+                    <!--<div class="table_unchoice">-->
+
+                    <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>一两理财[柚子_12111501]</li>-->
+                        <!--<li>男</li>-->
+                        <!--<li>推荐：一两理财</li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>1333333333</li>-->
+                        <!--<li></li>-->
+                        <!--<li></li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>余额：100</li>-->
+                        <!--<li>累计：100</li>-->
+                        <!--<li>提现：0</li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>普通/企业有金号/个人</li>-->
+                        <!--<li>粉丝：XX人</li>-->
+                        <!--<li>关注：XX人</li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>点评：XX条</li>-->
+                        <!--<li>头条：XX条</li>-->
+                        <!--<li>动态：XX条</li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>注册时间：2016-11-15</li>-->
+                        <!--<li>最后登录：2016-11-15</li>-->
+                        <!--<li>累计登陆：50天</li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>姓名：XX</li>-->
+                        <!--<li>支付宝：XX</li>-->
+                        <!--<li></li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>标签</li>-->
+                        <!--<li></li>-->
+                        <!--<li></li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>100</li>-->
+                        <!--<li></li>-->
+                        <!--<li></li>-->
+                    <!--</ul>-->
+                    <!--<div class="table_choice">-->
+
+                    <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>一两理财</li>-->
+                        <!--<li>男</li>-->
+                        <!--<li>推荐：一两理财</li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>1333333333</li>-->
+                        <!--<li></li>-->
+                        <!--<li></li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>余额：100</li>-->
+                        <!--<li>累计：100</li>-->
+                        <!--<li>冻结：0</li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>普通/企业有金号/个人</li>-->
+                        <!--<li>粉丝：XX人</li>-->
+                        <!--<li>关注：XX人</li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>点评：XX条</li>-->
+                        <!--<li>头条：XX条</li>-->
+                        <!--<li>动态：XX条</li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>注册时间：2016-11-15</li>-->
+                        <!--<li>最后登录：2016-11-15</li>-->
+                        <!--<li>累计登陆：50天</li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>姓名：XX</li>-->
+                        <!--<li>支付宝：XX</li>-->
+                        <!--<li></li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<ul>-->
+                        <!--<li>标签</li>-->
+                        <!--<li></li>-->
+                        <!--<li></li>-->
+                    <!--</ul>-->
+                <!--</td>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+    </div>
+    <div class="containF">
+        <ul class="containFoot" id="containFoot">
+            <li id="first" title="第一页"><img src="../../images/后台(1)_03.png" alt=""></li>
+            <li id="before" title="前一页"><img src="../../images/后台(1)_05.png" alt=""></li>
+            <li  class="li"><span>第</span><input type="text" class="inputCF" id="pageSelect"><span>页</span></li>
+            <li id="after" title="后一页"><img src="../../images/后台(1)_07.png" alt=""></li>
+            <li id="last" title="末页"><img src="../../images/后台(1)_09.png" alt=""></li>
+            <li class="button" id="pageSelectJump"><span>跳转</span></li>
+            <li class="last">
+                <span>每页</span>
+                <input type="text" id="zcf_cFoot_count" class="inputCF">
+                <span>条</span>
+            </li>
+            <li class="button" id="zcf_cFoot_pageSelectSure"><span>确定</span></li>
+            <li class="last" id="zcf_cFoot_pageCount">总计几页</li>
+        </ul>
+    </div>
+    <div class="new_pop" id="zcf_new_pop_debitCard">
+        <div class="new_pop_main">
+            <div class="new_pop_head">
+                <span class="new_pop_head_tips">修改信息</span>
+                <div class="new_pop_head_X"><span>X</span></div>
+            </div>
+            <div class="new_pop_body new_pop_body_small">
+                <div class="new_pop_body_contain ">
+                    <ul>
+                        <li>
+                            <div class="new_pop_body_contain_left"><span>用户昵称：</span></div>
+                            <div class="new_pop_body_contain_right">
+                                <input type="text" data-base="uname" >
+                            </div>
+                        </li>
+                        <li>
+                            <div class="new_pop_body_contain_left"><span>手机：</span></div>
+                            <div class="new_pop_body_contain_right">
+                                <input type="text" data-base="mobile" >
+                            </div>
+                        </li>
+                        <li>
+                            <div class="new_pop_body_contain_left"><span>标签：</span></div>
+                            <div class="new_pop_body_contain_right">
+                                <input type="text" data-base="tab" >
+                            </div>
+                        </li>
+                        <li>
+                            <div class="new_pop_body_contain_left"><span>性别：</span></div>
+                            <div class="new_pop_body_contain_right new_pop_input_radio">
+                                <label for=""><input type="radio" name="if1" value="0" data-base="sex"><span>男</span></label>
+                                <label for=""><input type="radio" name="if1" value="1" data-base="sex"><span>女</span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="new_pop_tail">
+                <button class="new_pop_tail_button1" >保存</button>
+                <button class="new_pop_tail_button2" >取消</button>
+            </div>
+        </div>
+    </div>
+    <div class="new_pop" id="zcf_new_pop_addRelation">
+        <div class="new_pop_main">
+            <div class="new_pop_head">
+                <span class="new_pop_head_tips">修改信息</span>
+                <div class="new_pop_head_X"><span>X</span></div>
+            </div>
+            <div class="new_pop_body new_pop_body_XsmallContain">
+                <div class="new_pop_body_contain">
+                    <ul>
+                        <li>
+                            <div class="new_pop_body_contain_left"><span>密码类型：</span></div>
+                            <div class="new_pop_body_contain_right new_pop_input_radio">
+                                <label for=""><input type="radio" name="if1" value="jiaoyi" data-base="status"><span>交易密码</span></label>
+                                <label for=""><input type="radio" name="if1" value="login" data-base="status"><span>登陆密码</span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="new_pop_tail">
+                <button class="new_pop_tail_button1" >确定</button>
+                <button class="new_pop_tail_button2" >取消</button>
+            </div>
+        </div>
+    </div>
+    <div class="new_pop" id="zcf_new_pop_removeRelation">
+        <div class="new_pop_main new_pop_mainTip">
+            <div class="new_pop_head">
+                <span class="new_pop_head_tips">修改信息</span>
+                <div class="new_pop_head_X"><span>X</span></div>
+            </div>
+            <div class="new_pop_body new_pop_body_XsmallContain">
+                <div class="new_pop_body_contain">
+                    <ul>
+                        <li>
+                            <div class="new_pop_body_contain_left"><span>评论：</span></div>
+                            <div class="new_pop_body_contain_right new_pop_input_radio">
+                                <label for=""><input type="radio" name="if1" value="1" data-base="allow_comment"><span>允许</span></label>
+                                <label for=""><input type="radio" name="if1" value="0" data-base="allow_comment"><span>不允许</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="new_pop_body_contain_left"><span>点评：</span></div>
+                            <div class="new_pop_body_contain_right new_pop_input_radio">
+                                <label for=""><input type="radio" name="if4" value="1" data-base="allow_dianping"><span>允许</span></label>
+                                <label for=""><input type="radio" name="if4" value="0" data-base="allow_dianping"><span>不允许</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="new_pop_body_contain_left"><span>头条：</span></div>
+                            <div class="new_pop_body_contain_right new_pop_input_radio">
+                                <label for=""><input type="radio" name="if2" value="1" data-base="allow_top"><span>允许</span></label>
+                                <label for=""><input type="radio" name="if2" value="0" data-base="allow_top"><span>不允许</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="new_pop_body_contain_left"><span>动态：</span></div>
+                            <div class="new_pop_body_contain_right new_pop_input_radio">
+                                <label for=""><input type="radio" name="if3" value="1" data-base="allow_news"><span>允许</span></label>
+                                <label for=""><input type="radio" name="if3" value="0" data-base="allow_news"><span>不允许</span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="new_pop_tail">
+                <button class="new_pop_tail_button1" >确定</button>
+                <button class="new_pop_tail_button2" >取消</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

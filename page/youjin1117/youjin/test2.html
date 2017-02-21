@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#button").click(function () {
+                var file= $(":file");
+                file.trigger("click");
+                //console.log("length",file[0].files,"Formdate",FormData);
+            });
+            $(":file").change(function () {
+                console.log("length",this.files);
+                var date=new FormData();
+                var length=this.files.length,
+                        i;
+                for(i=1;i<length+1;i++){
+                    date.append(("file"+i),this.files[i-1]);
+                }
+                date.append("type_id","1");
+                date.append("out_id","5");
+                console.log(date);
+                var oReq = new XMLHttpRequest();
+                oReq.open("POST", "http://120.24.43.90/?m=Image&s=uploadImage");
+                oReq.send(date);
+                oReq.onreadystatechange=function () {
+                    if (oReq.readyState==4 && oReq.status==200)
+                    {
+                        var data=JSON.parse(oReq.response);
+                        console.log("oReq",data);
+                    }
+                };
+//                $.ajax(
+//                        {
+//                            type: "POST",
+//                            url: "http://120.24.43.90/?m=Image&s=uploadImage",
+//                            data:date,
+//                            contentType:'multipart/form-data',
+//                            success: function (e) {
+//                                console.log("e",e);
+//                            },
+//                        }
+//                )
+
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="file" multiple="multiple">
+<button id="button">点击</button>
+<!--<img src="data:image/gif;base64,R0lGODlhAgACAIAAAP///wAAACwAAAAAAgACAAACAoRRADs="/>-->
+</body>
+</html>

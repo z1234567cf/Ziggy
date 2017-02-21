@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var num=[3,4,5];
+//                num1=1,
+//                num2=num.unshift(num1),
+//                num3=num.unshift(2);
+//        console.log('num',num,'num2',num2,'num3',num3);
+        num.splice(0,0,[1,2]);
+        //console.log(num);
+//记录学生成绩的对象类
+        function Count(obj) {
+           this.math=obj.math;
+            this.language=obj.language;
+            this.b=obj.b;
+        }
+        Count.prototype.add=function () {
+
+        };
+        function order(arr,o) {
+            var arr=arr||this.arr;
+            var word='',
+                    i;
+            if(o==="order"){
+                for(i=0;i<arr.length;i++){
+                    word+=arr[i]+" ";
+                }
+            }else {
+                for(i=arr.length-1;i>-1;i--){
+                    word+=arr[i]+" ";
+                }
+            }
+            return word;
+        }
+        var word="asdasd.asda.sdasdasd.asd.ads.a.sd.asd.a.d.ad.",
+                wordA=word.split('.');
+        //console.log(order(wordA,'order'));
+
+        var obj1={
+            arr:["s","l","v","e","r"],
+            order:function () {
+                var arr=this.arr;
+                return order(arr,"order");
+            },
+        };
+//        console.log(obj1.order());
+//        console.log("A"<"a");
+        function compare(a,b) {
+            var str="a b c d e f g h i j k l m n o p q r s t u v w x y z";
+            var strA=str.split(' ').reverse();
+            //console.log(strA);
+            var aArry=a.split(""),
+                    bArry=b.split(""),
+                    len=aArry.length>bArry.length?aArry.length:bArry.length,
+                    i;
+            console.log(aArry[3],bArry,"com",aArry[3]===undefined);
+            for(i=0;i<len;i++){
+                console.log(i);
+                if(aArry[i]===undefined){
+                    return true;
+                }
+                if(bArry[i]===undefined){
+                    return false;
+                }
+                if(strA.indexOf(aArry[i])>strA.indexOf(bArry[i])){
+                    return true;
+                }else if(strA.indexOf(aArry[i])<strA.indexOf(bArry[i])){
+                    return false;
+                }else if(strA.indexOf(aArry[i])==strA.indexOf(bArry[i])){
+                    continue;
+                }
+            }
+            return "equal";
+        }
+        console.log('compare()',compare("ab ","abb"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

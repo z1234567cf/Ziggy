@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //if括号中的参数转化为什么类型
+        var n={};
+        if(n){
+            console.log(true);
+        }
+        //结论在JS中，由于if()语句的括号中需要一个布尔类型的值，而当它的值不是布尔类型时，JS会尝试将其转变为布尔值。
+        //测试三目运算符的判断转换是否也和if中的括号转换一样
+        var b=n?n:"n";
+        console.log(b);
+        //结论应该也是转换为布尔值类型
+    </script>
+</head>
+<body>
+
+</body>
+</html>

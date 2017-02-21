@@ -1,0 +1,9 @@
+div{
+    float: left;
+    width: 30%;
+    border-right: #00bbee;
+
+}
+iframe{
+    border:1px solid red;
+}

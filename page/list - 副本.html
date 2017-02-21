@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head id="Head1">
+<meta charset="utf-8">
+<title>后台管理系统</title>
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="js/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="js/themes/icon.css" />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min-1.2.0.js"></script>
+<script type="text/javascript">
+$(function () {
+//动态加载标题和数据
+$.ajax({
+		url: "/?m=Wangdai&s=wdList",
+		type: "post",
+		dataType: "json",
+		success: function (json) {
+			var msg = $.parseJSON(json);
+			$("#dg").datagrid({
+				columns: ["平台"]    //动态取标题
+			});
+			$("#dg").datagrid("loadData", json.data);  //动态取数据
+		}
+	});
+});
+</script>
+</head>
+<body>
+<table id="dg" data-options="
+rownumbers:true,
+singleSelect:true,
+autoRowHeight:false,
+pagination:true,
+resizeHandle:'right'">
+	<thead>
+		<tr></tr>
+	</thead>
+</table>
+</body>
+</html>

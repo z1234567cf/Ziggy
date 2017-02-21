@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head id="Head1">
+<meta charset="utf-8">
+<title>后台管理系统</title>
+<style>
+.winBigbox{ /*background:rgba(23, 22, 22, 0.38);*/ position:fixed; top:0; left:0; z-index:999;}
+
+.add{ padding10px; font-size:14px;}
+.list{ width:100%;}
+.list th{ text-align:left; background:#F4F4F4;}
+.list td{ border-bottom:1px solid #F1E8A5; border-right:1px solid #F1E8A5}
+.list tr:hover td{ background:#F1E8A5;}
+.none{ display:none;}
+
+.winbox{ width:520px; background:#fff; border-radius:5px; border:1px solid #A1AFD0; position:absolute; left:50%; top:50%; }
+.wTit{ text-align:center; padding:10px 0; font-size:20px; color:#545454; border-bottom:1px solid #CCC;}
+.xclose{ color:#333; width:25px; height:25px; line-height:25px; display:inline-block; border:1px solid #333; border-radius:50%; float:right; margin-right:20px; font-size:20px; cursor:pointer;}
+.wcen{ padding-left:125px;}
+.wcenli{ color:#545454; font-size:14px; padding:5px 0;}
+.wcenli span{ margin-left:5px; font-size:14px;}
+.inco8{ color:#ff5c5c;}
+.wcz{ color:#32b16c; margin-left:20px; border-bottom:1px solid #32b16c;}
+.wcenli2{ color:#545454; font-size:14px; padding-top:20px;}
+.wcenli2 input{ width:160px; padding:10px 20px; border:1px solid #a8a8a8; font-size:14px; border-radius:5px; margin-left:5px;}
+.wpass{ color:#fd8238; margin-left:5px;}
+.wcenli3{ width:250px; padding:10px; border-radius:5px; text-align:center; color:#fff; background:#fd8238; margin:20px 0; font-size:14px; cursor:pointer;}
+.inzhanWei{width:100%; height: 350px;}
+.inYdy{ width: 580px; height: 310px; display:inline-block; position: absolute; top: 50%; left: 50%; background: url(/ind/images/intc.png)}
+.yclose{ width: 40px; height: 40px; float: right; padding: 10px; cursor: pointer;}
+.xsin{ width: 160px; height: 42px; display: block; margin-top: 240px; margin-left: 212px; }
+.est{ background:#0CBCF3; color:#fff; padding:0 20px;}
+.del{ background:#F32E0C; color:#fff; padding:0 20px;}
+</style>
+<script type="text/javascript" src="js/jquery.js"> </script>
+<script type="text/javascript" src="js/base.js"> </script>
+<script type="text/javascript" src="js/template.js"> </script>
+<!--<script type="text/javascript" src="js/se t.js"> </script>-->
+<script type="text/javascript">
+	$(function (){
+		 getList();
+		 $("#add").click(function(){
+			winOpen("wBifbox"); //调用购买弹窗
+		});
+	});
+	
+	//获取列表
+	function getList(){
+		BaseControl.loadJson("/?m=Wd&s=wdList",function(json){
+			BaseControl.converTemplateToHtml(json,"liTemplate","liShow");
+		});
+	}
+	
+	function set(obj){
+		
+	}
+	
+	//添加
+	function redAdd(){
+		var name = $("#name").val();
+		var province = $("#province").val();
+		var city = $("#city").val();
+		var area = $("#area").val();
+		var apr = $("#apr").val();
+		var url = $("#url").val();
+		var background = $("#background").val();
+		var bus_model = $("#bus_model").val();
+		var is_cunguan = $("#is_cunguan").val();
+		var cg_bank = $("#cg_bank").val();
+		var is_open = $("#is_open").val();
+		
+		data={
+			name:12,
+			province:13,
+			city:14,
+			area:14,
+			apr:15,
+			url:15,
+			background:1111117,
+			bus_model:16,
+			is_cunguan:16,
+			cg_bank:16,
+//			is_open:16
+		}
+		BaseControl.loadJson({url:"/?m=Wd&s=addWd",data:data},function(json){
+			if(json.r == 1){
+				alert("添加成功");
+				getList();
+			}else{
+				alert(json.msg);
+			}
+		});
+	}
+	redAdd();
+    //弹窗
+	function winOpen(boxId){
+		var _inThis = this;
+		var boxId = "#" + boxId;
+		$(boxId).show();
+		$(".xclose").click(function(){
+			$(boxId).hide();
+			$("#payPassword").val('');
+			_inThis._inNumber = 0;
+		});
+		$(".yclose").click(function(){
+			$(boxId).hide();
+			$("#payword").val('');
+			_inThis._inNumber = 0;
+		});
+		//根据页面可见区域建立遮罩
+		var wid = document.body.clientWidth + "px";
+		var hid = document.body.clientHeight + "px";
+		$(boxId).css({"height":hid,"width":wid});
+		
+		//居中定位
+		var _h = $(window).height(), _w = $(window).width();
+        var _top = (_h - 700) * 1.00 / 2, _left = (_w - 520) * 1.00 / 2;
+        if (_top < 0) _top = 0; if (_left < 0) _left = 0;
+        $(".winbox").css("left", _left + "px").css("top", _top + "px");
+		
+		//随窗体变化
+		$(window).resize(function () {
+             var _h = $(window).height(), _w = $(window).width(), _top = (_h - $(".winbox").height()) * 1.00 / 2, _left = (_w - $(".winbox").width()) * 1.00 / 2;
+			if (_top < 0) _top = 0; if (_left < 0) _left = 0;
+			$(".winbox").css("left", _left + "px").css("top", _top + "px");
+        });
+	}
+
+</script>
+</head>
+<body>
+<div class="add" id="add">添加</div>
+<table class="list">
+    <thead>
+	<tr>
+		<th>id</th>
+		<th>平台名称</th>
+		<th>开始时间</th>
+		<th>结束时间</th>
+		<th>操作</th>
+	</tr>
+	</thead>
+	<tbody id="liShow">
+	<textarea id="liTemplate" class="none">
+	{for item in data}
+	<tr>
+		<td>
+			<li>${data.province}</li>
+			<li>${data.background}</li>
+		</td>
+		<td>${data.name}</td>
+		<td>${data.bus_model}</td>
+		<td>${data.area}</td>
+		<td><span class="est" id="est">修改</span><span class="del" id="del">删除</span></td>
+	</tr>
+	{/for}
+	</textarea>
+	</table>
+</table>
+
+<div class="winBigbox none" id="wBifbox" style="z-index:999;">
+	<form id="addForm">
+	<div class="winbox" id="wbox">
+    	<div class="wTit clearfix"><font id="winTit">添加平台</font><a class="xclose">×</a></div>
+        <div class="wcen">
+        	<div class="wcenli2">平台名称: <input type="text" id="name" placeholder="" /></div>
+            <div class="wcenli2">省编号: <input type="text" id="province" placeholder="" /></div>
+			<div class="wcenli2">城市编号: <input type="text" id="city" placeholder="" /></div>
+			<div class="wcenli2">区县编号: <input type="text" id="apr" placeholder="" /></div>
+			<div class="wcenli2">链接: <input type="text" id="url" placeholder="" /></div>
+			<div class="wcenli2">背景: <input type="text" id="background" placeholder="" /></div>
+			<div class="wcenli2">经营类型: <input type="text" id="bus_model" placeholder="" /></div>
+			<div class="wcenli2">是否存管: <input type="text" id="is_cunguan" placeholder="" />
+			<div class="wcenli2">存管银行: <input type="text" id="cg_bank" placeholder="" />
+			<div class="wcenli2">是否开放: <input type="text" id="is_open" placeholder="" />
+            <div class="wcenli3" id="addSubmit">确认添加</div>
+        </div>
+    </div>
+	</form>
+</div>
+</body>
+</html>

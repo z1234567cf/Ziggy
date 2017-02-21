@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    font-family: "Microsoft Yahei";
+}
+.main_fix,.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.mask{
+    z-index: 1;
+}
+.minddle{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 378px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.63);
+    margin-left: -350px;
+    margin-top: -189px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.45);
+}
+input,button{
+    display: block;
+    width: 350px;
+    height: 50px;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    line-height: 50px;
+    font-size: 16px;
+    margin: auto;
+    font-family: "Microsoft Yahei";
+    margin-bottom: 26px;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+.minddle h1{
+    color: white;
+    font-size: 48px;
+    margin-bottom: 40px;
+
+}
+.minddle input:nth-child(2){
+    background: url("../images/背景暗色图标_03.png") no-repeat 10px 10px;
+    background-color: #fff;
+}
+.minddle input:nth-child(3){
+    background: url("../images/背景暗色图标_06.png") no-repeat 10px 10px;
+    background-color: #fff;
+}
+.input_button{
+    padding-left: 0;
+    background-color: #4187e7;
+    color: white;
+}
+.input_button:hover{
+    background-color: #3581e7;
+    cursor: pointer;
+}
+.warn{
+    border: 1px solid #bf6150;
+}
+.succeed{
+    border: 1px solid #7bd24e;
+}

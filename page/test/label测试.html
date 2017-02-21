@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        var youJin={};
+        youJin.labelSelectAll=function () {
+            var label=$("label");
+            label.unbind("click",youJin.labelSelectAllCon);
+            label.bind("click",youJin.labelSelectAllCon);
+        };
+        youJin.labelSelectAllCon=function() {
+            var input=$(this).children("input");
+            var type=input.attr("type");
+            if(input.prop("disabled")===true){
+                return;
+            }
+            console.log(input.prop("disabled"));
+            if(type=="radio"){
+                input.prop("checked",true);
+            }else if(type=="checkbox"){
+                if(!this.count){this.count=1}
+                var sitch=this.count%2;
+                if(sitch==1){
+                    input.prop("checked",true);
+                }else {
+                    input.prop("checked",false);
+                }
+                this.count++;
+            }
+        };
+        $(document).ready(function () {
+            var count=0;
+            $("label").click(function () {
+//                var input=$(this).children("input");
+//                var type=input.attr("type");
+//                console.log(input.attr("type"));
+//                if(type=="radio"){
+//                    input.prop("checked",true);
+//                }else if(type=="checkbox"){
+//                    if(!this.count){this.count=1}
+//                    var sitch=this.count%2;
+//                    if(sitch==1){
+//                        input.prop("checked",true);
+//                    }else {
+//                        input.prop("checked",false);
+//                    }
+//                    this.count++;
+//                }
+            console.log(count++);
+                youJin.labelSelectAll();
+            });
+            youJin.labelSelectAll();
+        })
+    </script>
+</head>
+<body>
+<label for="12">中文字幕来来<input type="radio"  name="12"></label>
+<label for="123"><span>中文字幕来来</span><input type="radio"  name="12"></label>
+<label for="123"><span>中文字幕来来1</span><input type="checkbox"  name="122" disabled></label>
+<label for="123"><span>中文字幕来来2</span><input type="checkbox"  name="122"></label>
+<label for="123"><span>中文字幕来来3</span><input type="checkbox"  name="122"></label>
+<!--<label for="122">中文字幕来来<input type="radio" id="122"></label>-->
+</body>
+</html>

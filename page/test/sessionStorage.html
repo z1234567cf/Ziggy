@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //测试sessionStorage
+        window.onload=function () {
+            var btn=document.getElementById("button");
+            btn.onclick=function () {
+              window.location="sessionStorage2.html"
+            };
+            sessionStorage.name="Ziggy";
+            console.log(sessionStorage);
+        }
+
+        //结论就是单标签页；
+    </script>
+</head>
+<body>
+<button id="button">按钮</button>
+</body>
+</html>

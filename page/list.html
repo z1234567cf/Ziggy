@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head id="Head1">
+<meta charset="utf-8">
+<title>后台管理系统</title>
+<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" href="easyui/themes/default/easyui.css" />
+<link rel="stylesheet" href="easyui/themes/icon.css" />
+
+<script type="text/javascript">
+$(function () {
+//动态加载标题和数据
+	$.ajax({
+		url: "/?m=Wd&s=wdList",
+		type: "post",
+		dataType: "json",
+		success: function (json) {
+			var msg = $.parseJSON(json);
+			$("#dg").datagrid({
+				columns: ["平台列表"]    //标题
+			});
+			$('#dg').datagrid('load', {
+				name: 'easyui',
+				address: 'ho'
+			});
+
+			//$("#dg").datagrid("loadData", json.data);  //动态取数据
+		}
+	});
+
+});
+</script>
+</head>
+
+<body>
+<table id="dg" title="用户列表" class="easyui-datagrid" style="width:100%;"
+		toolbar="#toolbar"
+		rownumbers="true" fitColumns="true" singleSelect="true">
+	<thead>
+		<tr>
+			<th field="userId" width="50">id</th>
+			<th field="userName" width="50">姓名</th>
+			<th field="userMobile" width="50">手机号</th>
+			<th field="userAdd" width="50">地址</th>
+		</tr>
+	</thead>
+</table>
+</body>
+</html>

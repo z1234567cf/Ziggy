@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //for in 能遍历到原形对象上的属性吗
+        function test() {
+            this.te={
+                te:"1"
+            }
+        }
+        test.prototype.Math=function () {
+            console.log(1)
+        };
+        test.prototype.str="34";
+        for(var key in new test()){
+            console.log(key);
+        }
+        //结论for in 能遍历到原形对象上的属性和方法
+    </script>
+</head>
+<body>
+
+</body>
+</html>

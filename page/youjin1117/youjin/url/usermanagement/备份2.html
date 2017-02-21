@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../js/noCashe.js"></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/user.css">
+    <link rel="stylesheet" href="../../js/popplug/popplug.css">
+    <link rel="stylesheet" href="../../css/new_pop.css">
+    <script src="../../js/jquery-1.12.4.js"></script>
+    <script src="../../js/popplug/popplug.js"></script>
+    <script src="../../js/js_date_plug/laydate.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/usermanagement/activeList.js"></script>
+</head>
+<body style="font-size: 12px;min-width: 1080px;min-height: 820px">
+<div class="set">
+    <ul class="setUl">
+        <li id="refreash"><img src="../../images/user/bc_07.png" alt=""><span>刷新</span></li>
+        <li>
+            <span>
+                <b style="float: left;padding-left: 8px">
+                    排序：
+                </b>
+                <select name="" id="select"  style="float: left">
+                    <!--<option value="">默认</option>-->
+                    <option value="c_tot_get_ubi_dianping">点评数</option>
+                    <option value="c_tot_get_ubi_addtop">头条数</option>
+                    <option value="c_tot_get_ubi_addnews">动态数</option>
+                    <option value="c_tot_get_ubi_pinglun">评论数</option>
+                    <option value="fans">粉丝数</option>
+                    <option value="counts">关注数</option>
+                </select>
+           </span>
+        </li>
+        <li>
+            <select name="" id="select2">
+                <option value="">全部</option>
+                <option value="1">普通</option>
+                <option value="2">个人有金号</option>
+                <option value="3">企业有金号</option>
+            </select>
+        </li>
+        <!--<li><span>选择项②</span></li>-->
+    </ul>
+    <div class="input"  id="search">
+        <input type="text">
+        <img src="../../images/user/后台2(1)_10.png" alt="">
+    </div>
+</div>
+<div class="table" id="table">
+    <table >
+        <thead>
+        <tr>
+            <!--<th>排名</th>-->
+            <th>用户</th>
+            <th>手机号</th>
+            <th>状态</th>
+            <th>点评数</th>
+            <th>头条数</th>
+            <th>动态数</th>
+            <th>评论数</th>
+            <th>点赞数</th>
+            <th>被评数</th>
+            <th>被赞数</th>
+            <th>粉丝数</th>
+            <th>关注数</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<div class="containF">
+    <ul class="containFoot" id="containFoot">
+        <li id="first" title="第一页"><img src="../../images/后台(1)_03.png" alt=""></li>
+        <li id="before" title="前一页"><img src="../../images/后台(1)_05.png" alt=""></li>
+        <li  class="li"><span>第</span><input type="text" class="inputCF" id="pageSelect"><span>页</span></li>
+        <li id="after" title="后一页"><img src="../../images/后台(1)_07.png" alt=""></li>
+        <li id="last" title="末页"><img src="../../images/后台(1)_09.png" alt=""></li>
+        <li class="button" id="pageSelectJump"><span>跳转</span></li>
+        <li class="last">
+            <span>每页</span>
+            <input type="text" id="zcf_cFoot_count" class="inputCF">
+            <span>条</span>
+        </li>
+        <li class="button" id="zcf_cFoot_pageSelectSure"><span>确定</span></li>
+        <li class="last" id="zcf_cFoot_pageCount">总计几页</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var form=document.getElementsByTagName("form")[0];
+            form.elements[2].onclick=function () {
+                console.log("click");
+                form.elements[0].disabled=form.elements[0].disabled==true?false:true;
+
+            };
+//            form.elements[1].onfocus=function () {
+//                console.log("blur");
+//                this.select();
+//            };
+            form.elements[1].onselect=function () {
+                console.log(this.value.substring(this.selectionStart,this.selectionEnd))
+            }
+        }
+    </script>
+</head>
+<body>
+<form action="">
+    <input type="text" placeholder="1" size="5" maxlength="10">
+    <input type="text">
+    <input type="button" src="img/logo.png" value="确认">
+    <input type="number">
+    <input type="text" pattern="\d{0,}">
+    <button type="submit">确定</button>
+    <button type="submit" formnovalidate>确定</button>
+</form>
+</body>
+</html>

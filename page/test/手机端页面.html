@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="no">
+    <meta http-equiv="pragma" content="no-cache" />
+    <script>
+        //设置跟元素字体大小
+        var _html=document.getElementsByTagName("html")[0];
+        _html.style.fontSize=document.documentElement.clientWidth/10+"px";
+        var bc=document.getElementsByTagName("img")[0];
+
+        window.onload=function () {
+
+            //旋转的时候改变字体大小
+            var timer="";
+            function oresize() {
+//                var evt="onorientationchange" in window?"onorientationchange":"resize";
+//                console.log(evt);
+                window.addEventListener("resize",function (e) {
+                    var e=e||event;
+                    var _html=document.getElementsByTagName("html")[0];
+                    _html.style.fontSize=document.documentElement.clientWidth/10+"px";
+//                    alert(document.documentElement.clientWidth);
+                })
+            }
+            oresize();
+
+            //定义按钮的点击事件
+            var span=document.getElementById("dom_click");
+            span.addEventListener("touchstart",touchHandle);
+            function touchHandle(e) {
+                var e=e||event,
+                        div=document.getElementById("dom_move"),
+                        name=div.className;
+//                终止按钮事件
+                span.removeEventListener("touchstart",touchHandle);
+                console.log(this.className);
+                div.className+=" "+"animate";//添加动画
+                timer=setTimeout(function () {
+                    div.className=name;//移除动画
+                    span.addEventListener("touchstart",touchHandle);
+                },3000)
+            }
+        };
+//        console.log(document.documentElement,document.documentElement.clientWidth,window.screen.width);//document.documentElement是html元素
+    </script>
+    <link rel="stylesheet" href="css/draw.css">
+</head>
+<body>
+    <!--<div class="main_img"></div>-->
+    <img src="img/bgn.png" alt="" class="bc_img">
+    <div class="head">
+        <img class="head_img" src="img/backIcon_03.png" alt="" >
+        <span class="head_span">点评有奖</span>
+    </div>
+    <div class="_2block">
+        <div class="_2block_right">
+            <span class="_2block_span">
+                我的奖品
+            </span>
+        </div>
+    </div>
+    <div class="_3block">
+        <div class="_3block_div">
+            <span class="_3block_span">恭喜柚子_16112401抽中了微波炉一个</span>
+            <span class="_3block_span">恭喜王大力抽中了U币100万个</span>
+        </div>
+        <div class="_3block_show">
+            <div class="_3block_show_move" id="dom_move">
+                <div class="_3block_show_imgh"><img src="img/phone_03.png" alt=""></div>
+                <div class="_3block_show_imgh"><img src="img/again_03.png" alt=""></div>
+                <div class="_3block_show_imgh"><img src="img/fanbao_03.png" alt=""></div>
+                <div class="_3block_show_imgh"><img src="img/pillow_03.png" alt=""></div>
+                <div class="_3block_show_imgh"><img src="img/UB_03.png" alt=""></div>
+                <div class="_3block_show_imgh"><img src="img/weave_03.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="_4block">
+        <span class="_4block_span">您可通过点评增加抽奖次数</span>
+    </div>
+    <div class="_4blcok">
+        <span class="_4blcok_span" id="dom_click">
+            点我抽大奖
+        </span>
+    </div>
+    <div class="_5blcok">
+        <img src="img/henft_03.png" alt="" width="179px" height="32px">
+    </div>
+    <div class="_6blcok">
+        <div class="_6blcok2 _6blcokdiv">
+            <span>柚子_16112401</span>
+            <span>精华点评   25</span>
+        </div>
+        <div class="_6blcok1 _6blcokdiv">
+            <span>柚子_16112401</span>
+            <span>精华点评   25</span>
+        </div>
+        <div class="_6blcok3 _6blcokdiv">
+            <span>柚子_16112401</span>
+            <span>精华点评   25</span>
+        </div>
+    </div>
+    <div class="_7blcok">
+        <span>小米平板</span>
+        <span>iPad  mini</span>
+        <span>红米</span>
+    </div>
+    <div class="_8block">
+        <div class="_8block_div _8block_div1">
+            <!--<img src="img/huangseBC_03.png" alt="">-->
+            <span class="_8block_span1">4</span>
+            <span>柚子_16112401</span>
+            <span>精华点评   25</span>
+            <span>抱枕</span>
+        </div>
+        <div class="_8block_div">
+            <!--<img src="img/huangseBC_03.png" alt="">-->
+            <span class="_8block_span1">4</span>
+            <span>柚子_16112401</span>
+            <span>精华点评   25</span>
+            <span>抱枕</span>
+        </div>
+        <div class="_8block_div">
+            <!--<img src="img/huangseBC_03.png" alt="">-->
+            <span class="_8block_span1">4</span>
+            <span>柚子_16112401</span>
+            <span>精华点评   25</span>
+            <span>抱枕</span>
+        </div>
+        <div class="_8block_div">
+            <!--<img src="img/huangseBC_03.png" alt="">-->
+            <span class="_8block_span1">4</span>
+            <span>柚子_16112401</span>
+            <span>精华点评   25</span>
+            <span>抱枕</span>
+        </div>
+        <div class="_8block_div">
+            <!--<img src="img/huangseBC_03.png" alt="">-->
+            <span class="_8block_span1">4</span>
+            <span>柚子_16112401</span>
+            <span>精华点评   25</span>
+            <span>抱枕</span>
+        </div>
+        <div class="_8block_div">
+            <!--<img src="img/huangseBC_03.png" alt="">-->
+            <span class="_8block_span1">4</span>
+            <span>柚子_16112401</span>
+            <span>精华点评   25</span>
+            <span>抱枕</span>
+        </div>
+        <div class="_8block_div">
+            <!--<img src="img/huangseBC_03.png" alt="">-->
+            <span class="_8block_span1">4</span>
+            <span>柚子_16112401</span>
+            <span>精华点评   25</span>
+            <span>抱枕</span>
+        </div>
+    </div>
+    <div class="_9block">
+        <span>本次活动奖品由以下平台联合赞助</span>
+    </div>
+    <div class="_9blcok">
+        <div>
+            <img src="img/youqing_03.png" alt="" class="_9blcok_img1">
+            <img src="img/youqing_05.png" alt="" class="_9blcok_img2">
+            <img src="img/youqing_07.png" alt="" class="_9blcok_img3">
+        </div>
+    </div>
+    <div class="_10block">
+        <img src="img/tailhaed_13.png" alt="">
+        <ol>
+            <li><span>用户在活动期间，发布2次不同平台点评获得1次抽奖机会；</span></li>
+            <li><span>精华点评数量相同时，排名以点评数量多者优先；</span></li>
+            <li><span>获得实物的用户，有金将在活动结束后统一邮寄；</span></li>
+            <li><span>获得U币的用户，奖励直接打入U币账户，可前往U币账户查看；</span></li>
+            <li><span>在法律允许的范围内，有金拥有对此活动的解释权。</span></li>
+        </ol>
+    </div>
+</body>
+</html>

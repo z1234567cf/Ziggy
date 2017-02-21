@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../../js/noCashe.js"></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../css/user.css">
+    <link rel="stylesheet" href="../../../js/popplug/popplug.css">
+    <link rel="stylesheet" href="../../../css/new_pop.css">
+    <script src="../../../js/jquery-1.12.4.js"></script>
+    <script src="../../../js/popplug/popplug.js"></script>
+    <script src="../../../js/js_date_plug/laydate.js"></script>
+    <script src="../../../js/common.js"></script>
+    <script src="../../../js/sectionmanagement/netLoan/rankingList.js"></script>
+</head>
+<body style="font-size: 12px">
+<div class="set">
+    <ul class="setUl">
+        <li id="refreash"><img src="../../../images/user/bc_07.png" alt=""><span>刷新</span></li>
+        <li id="add"><span>新增</span></li>
+        <li id="modify"><span>修改</span></li>
+        <li>
+            <span>
+                <select id="zcf_select">
+                    <option value="1">启用</option>
+                    <option value="0">不启用</option>
+                </select>
+            </span>
+        </li>
+    </ul>
+    <div class="input" id="search">
+        <input type="text">
+        <img src="../../../images/user/后台2(1)_10.png" alt="">
+    </div>
+</div>
+<div class="table" id="table">
+    <table >
+        <thead>
+        <tr>
+            <th>榜单日期</th>
+            <th>车贷平台</th>
+            <th>成交量</th>
+            <th>利率</th>
+            <th>借款人数</th>
+            <th>投资人数</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <ul>
+                    <li>2012-12-12</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>平台</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>2000</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>0.3</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>2000</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>200</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="containF">
+    <ul class="containFoot" id="containFoot">
+        <li id="first" title="第一页"><img src="../../../images/后台(1)_03.png" alt=""></li>
+        <li id="before" title="前一页"><img src="../../../images/后台(1)_05.png" alt=""></li>
+        <li  class="li"><span>第</span><input type="text" class="inputCF" id="pageSelect"><span>页</span></li>
+        <li id="after" title="后一页"><img src="../../../images/后台(1)_07.png" alt=""></li>
+        <li id="last" title="末页"><img src="../../../images/后台(1)_09.png" alt=""></li>
+        <li class="button" id="pageSelectJump"><span>跳转</span></li>
+        <li class="last">
+            <span>每页</span>
+            <input type="text" id="zcf_cFoot_count" class="inputCF">
+            <span>条</span>
+        </li>
+        <li class="button" id="zcf_cFoot_pageSelectSure"><span>确定</span></li>
+        <li class="last" id="zcf_cFoot_pageCount">总计几页</li>
+    </ul>
+</div>
+<div class="new_pop" id="zcf_new_pop_debitCard">
+    <div class="new_pop_main">
+        <div class="new_pop_head">
+            <span class="new_pop_head_tips">修改信息</span>
+            <div class="new_pop_head_X"><span>X</span></div>
+        </div>
+        <div class="new_pop_body">
+            <div class="new_pop_body_contain">
+                <ul>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>榜单日期：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="list_date" onclick="laydate()" class="laydate-icon">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>车贷平台：</span></div>
+                        <div class="new_pop_body_contain_right new_pop_positon">
+                            <input type="text" data-base="ptname" data-baseH="ptid">
+                            <div class="new_pop_positon_div">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>利率：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="apr" >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>交易量：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="trade" >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>交易量变化：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="trade_change" >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>借款人数：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="borrower_num" >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>借款人数变化：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="borrower_num_change" >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>投资人数：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="tender_num" >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>投资人数变化：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="tender_num_change" >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>是否启用：</span></div>
+                        <div class="new_pop_body_contain_right new_pop_input_radio">
+                            <label for=""><input type="radio" name="if" value="1" data-base="is_open"><span>是</span></label>
+                            <label for=""><input type="radio" name="if" value="0" data-base="is_open"><span>否</span></label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="new_pop_tail">
+            <button class="new_pop_tail_button1" id="new_pop_tail_button1">保存</button>
+            <button class="new_pop_tail_button2" id="new_pop_tail_button2">取消</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

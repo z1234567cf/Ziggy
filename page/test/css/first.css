@@ -1,0 +1,20 @@
+.main {
+  height: 200px;
+  width: 300px;
+  background-color: #00a2d4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #00a6cf;
+  font-family: "Adobe Caslon Pro Bold";
+  opacity: 0.5;
+  font-size: 15px;
+  font-weight: 500; }
+
+.nama {
+  width: 500px;
+  height: 400px; }
+
+.N {
+  width: 500px;
+  height: 400px; }

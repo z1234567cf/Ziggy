@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <script>
+//        if(!XMLHttpRequest){//排除ie
+//            window.location="http://120.24.43.90/login/login.html?v=220462a77c";
+//        }
+        var relational={};
+//        var ajax=new XMLHttpRequest();
+//        ajax.open("GET","http://120.24.43.90/?m=Manage&s=isLogin",false);
+//        ajax.send();
+//        console.log("ajax",ajax);
+//        if(ajax.response){
+//            var json=JSON.parse(ajax.response);
+//            //console.log("json",json);
+//            if(json.r=="0"){
+//                window.location="http://120.24.43.90/login/login.html?v=220462a77c";
+//            }else {
+//                relational.uname=json.user.uname;
+//            }
+//        }
+    </script>
+    <title>Title</title>
+    <link rel="stylesheet" href="../youjin/css/user.css?v=ccd9a5039b">
+    <link rel="stylesheet" href="js/popplug/popplug.css?v=55b8f6c402">
+    <link rel="stylesheet" href="css/new_pop.css?v=4a40c63954">
+    <script src="js/jquery-1.12.4.js?v=fb2d334dab"></script>
+    <script src="js/popplug/popplug.js?v=6eb6a99fc8"></script>
+    <script src="js/user.js?v=19405f33dd"></script>
+    <script src="js/js_date_plug/laydate.js?v=2e986020f4"></script>
+
+    <!--<script type="text/javascript" src="js/UEditor/ueditor.config.js?v=e9c1b9776d"></script>-->
+    <!--<script type="text/javascript" src="js/UEditor/ueditor.all.js?v=42ba810086"></script>-->
+    <!--<script src="js/UEditor/lang/zh-cn/zh-cn.js?v=324d921eed" type="text/javascript" defer="defer"></script>-->
+    <!--<link href="js/UEditor/themes/default/css/ueditor.css?v=af3d19c5d7" type="text/css" rel="stylesheet">-->
+    <!--<script src="js/UEditor/third-party/codemirror/codemirror.js?v=caadadf17a" type="text/javascript" defer="defer"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href="js/UEditor/third-party/codemirror/codemirror.css?v=2ab8b08e3d">-->
+    <!--<script src="js/UEditor/third-party/zeroclipboard/ZeroClipboard.js?v=56acbc88ef" type="text/javascript" defer="defer"></script>-->
+
+    <!--13-->
+
+</head>
+<body>
+<noscript><div class="noscript">抱歉，您未开启JavaScript功能。（Sorry, your browser does not support JavaScript!）</div></noscript>
+<div class="major">
+    <div class="head">
+        <div class="headL">
+            <img src="../youjin/images/logo.png?v=a569ab2ee9" alt="">
+            <span>柚今后台管理系统</span>
+        </div>
+        <ul class="headM">
+            <li id="main">主页</li>
+            <li id="service">用户管理</li>
+            <li id="model">版块管理</li>
+            <li id="check">审核管理</li>
+            <li id="uCoin">U币管理</li>
+            <li id="ad">广告管理</li>
+            <li id="bigDate" >大数据</li>
+            <li id="companyControl">单位管理</li>
+        </ul>
+        <ul class="headR">
+            <li >
+                <span class="time" id="timeDisplay"></span>
+            </li>
+            <li class="headRli">
+                <img src="../youjin/images/head.png?v=405228a963" alt="">
+                <span>张三</span>
+                <button id="modify_password">修改密码</button>
+                <button id="quit">退出</button>
+            </li>
+        </ul>
+    </div>
+    <div class="contain">
+        <div class="containMain">
+            <div class="containMainL" id="containMainL">
+                <div class="containMainL_head" id="containMainL_head_user">
+                    <img src="../youjin/images/user/bc_03.png?v=090f843194" alt="">
+                    <span>导航菜单</span>
+                </div>
+                <div class="containMainL_head containMainL_head_main" id="containMainL_head_main">
+                    <img src="../youjin/images/user/bc_03.png?v=090f843194" alt="">
+                    <span>工作菜单</span>
+                </div>
+                <div class="containMainL_div" id="containMainL_div">
+                    <ul class="containMainL_ul" id="containMainL_ul">
+                        <!--<li>-->
+                        <!--<div>-->
+                        <!--<img src="../youjin/images/user/bc_10.png?v=2d9c62de95" alt="">-->
+                        <!--<span>用户信息</span>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--<ul class="containMainL_ul_ul">-->
+                        <!--<li>官方签到 <img src="../youjin/images/user/bc_18.png?v=e7d7475219" alt=""></li>-->
+                        <!--<li>阅读签到1</li>-->
+                        <!--<li>阅读签到2</li>-->
+                        <!--<li>阅读签到3</li>-->
+                        <!--<li>阅读签到4</li>-->
+                        <!--</ul>-->
+                        <!--<li>-->
+                        <!--<div>-->
+                        <!--<img src="../youjin/images/user/bc_10.png?v=2d9c62de95" alt="">-->
+                        <!--<span>签到</span>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<div>-->
+                        <!--<img src="../youjin/images/user/bc_10.png?v=2d9c62de95" alt="">-->
+                        <!--<span>用户信息</span>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<div>-->
+                        <!--<img src="../youjin/images/user/bc_10.png?v=2d9c62de95" alt="">-->
+                        <!--<span>用户信息</span>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+
+            </div>
+            <div class="containMainR" id="containMainR_mian" style="display: none">
+                <iframe src="url/main/mainList.html?v=87f4b6d57c" frameborder="0" id="containMainR_main_iframe"></iframe>
+            </div>
+            <div class="containMainR" id="containMainR_user">
+                <div class="navLabel">
+                    <!--<div>-->
+                    <!--<span>用户签到</span><img src="../youjin/images/user/未标题-6.png?v=582b178bf9" alt="">-->
+                    <!--</div>-->
+                    <!--<div style="background-color: #91bff9">-->
+                    <!--<span>用户签到</span><img src="../youjin/images/user/未标题-6.png?v=582b178bf9" alt="">-->
+                    <!--</div>-->
+                </div>
+                <div class="iframe" id="iframe">
+                    <div>
+                        <div class="set">
+                            <ul class="setUl">
+                                <li><img src="../youjin/images/user/bc_07.png?v=1a2c9481a7" alt=""><span>刷新</span></li>
+                                <li ><span>修改信息</span></li>
+                                <li ><span>重置密码</span></li>
+                                <li ><span>限制/解除</span></li>
+                                <li><span>用户跟踪</span></li>
+                            </ul>
+                            <div class="input">
+                                <input type="text">
+                                <img src="../youjin/images/user/后台2(1)_10.png?v=037e5d4cfb" alt="">
+                            </div>
+                        </div>
+                        <div class="table">
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--<div class="containF">-->
+        <!--<ul class="containFoot">-->
+        <!--<li><img src="../youjin/images/后台(1)_03.png?v=d9ad74af3b" alt=""></li>-->
+        <!--<li><img src="../youjin/images/后台(1)_05.png?v=2190e81106" alt=""></li>-->
+        <!--<li class="li"><span>第</span><input type="text" class="inputCF"><span>页</span></li>-->
+        <!--<li><img src="../youjin/images/后台(1)_07.png?v=1d1469a8f7" alt=""></li>-->
+        <!--<li><img src="../youjin/images/后台(1)_09.png?v=d51280c0f3" alt=""></li>-->
+        <!--<li class="button"><span>跳转</span></li>-->
+        <!--<li class="last">每页15条</li>-->
+        <!--</ul>-->
+        <!--</div>-->
+    </div>
+</div>
+<div class="new_pop" id="zcf_new_pop_quit">
+    <div class="new_pop_main new_pop_mainTip">
+        <div class="new_pop_head">
+            <span class="new_pop_head_tips">退出信息</span>
+            <div class="new_pop_head_X"><span>X</span></div>
+        </div>
+        <div class="new_pop_body new_pop_body_Xsmall">
+            <div class="new_pop_body_contain">
+                <ul>
+                    <li>
+                        <div class="new_pop_body_contain_middle"><span>确认退出吗？</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="new_pop_tail">
+            <button class="new_pop_tail_button1" >确定</button>
+            <button class="new_pop_tail_button2" >取消</button>
+        </div>
+    </div>
+</div>
+<div class="new_pop" id="zcf_new_pop_password">
+    <div class="new_pop_main new_pop_mainTip">
+        <div class="new_pop_head">
+            <span class="new_pop_head_tips">密码修改信息</span>
+            <div class="new_pop_head_X"><span>X</span></div>
+        </div>
+        <div class="new_pop_body new_pop_body_XsmallS">
+            <div class="new_pop_body_contain">
+                <ul>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>旧密码：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="password" data-base="oldpassword" >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>新密码：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="password" data-base="newpassword" >
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="new_pop_tail">
+            <button class="new_pop_tail_button1" >确定</button>
+            <button class="new_pop_tail_button2" >取消</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

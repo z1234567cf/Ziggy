@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var youJin={};
+        youJin.HanziToUnicode=function (str) {
+            var str=str,//汉字
+                    len=str.length,
+                    unicoude="",//没区别
+                    i;
+            for(i=0;i<len;i++){
+                unicoude+="\\u"+parseInt(str[i].charCodeAt(0),10).toString(16);
+            }
+            console.log(unicoude);
+            return unicoude;
+        };
+        var a="通过",
+                b=a.charCodeAt(0);
+        console.log(b,typeof b);
+        var unicode=youJin.HanziToUnicode("通过");
+        console.log(unicode);
+function tounicode(data)
+{
+    if(data == '') return '请输入汉字';
+    var str ='';
+    for(var i=0;i<data.length;i++)
+    {
+        str+="\\u"+parseInt(data[i].charCodeAt(0),10).toString(16);
+    }
+    return str;
+}
+console.log(tounicode("通过"));
+        var reg1=/\w+/ig;
+        var reg=new RegExp("\\w"+unicode+"$","gi");
+
+        console.log(reg.test("通过"),reg);
+        //注意\在字符串中的意思
+        var data=new Date();
+        console.log(data);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

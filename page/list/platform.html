@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/platform.css">
+    <script type="text/javascript" src="/ind/js/bn.js"></script>
+    <!--<script type="text/javascript" src="/js/boot.js"></script>-->
+    <!--<script type="text/javascript" src="/ind/js/wxs.js"></script>-->
+    <script type="text/javascript" src="/js/datepicker/WdatePicker.js"></script>
+    <!--<script type="text/javascript" src="/js/Date.format.js"></script>-->
+    <script type="text/javascript" >
+        function doFirst(){
+            GD.init("/?m=Wd&s=wdList","#showlist","mysid",7);
+            GD.setOrder("time_h");
+            GD.load(0);
+        };
+        function doSecond(_json){
+
+
+        }
+    </script>
+</head>
+<body>
+    <div class="ucenter_zhjl">
+    <div class="day_select" style="margin-bottom:32px;">
+        <div class="start_day">起止时间：</div>
+        <input type="text" class="date_input" id="dateFrom" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'dateTo\')}'})">
+        <span>至</span>
+        <input type="text" class="date_input" id="dateTo"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'dateFrom\')}'})">
+    </div>
+        <div>
+            <div class="day_bxq">
+                <ul class="day_bxq_ul">
+                    <li style="width:100px;">平台名称</li>
+                    <li style="width:100px;">监管协会</li>
+                    <li style="width:100px;">所在地</li>
+                    <li style="width:100px;">上线时间</li>
+                    <li style="width:100px;">融资情况</li>
+                    <li style="width:100px;">保障模式</li>
+                    <li style="width:100px;">icp</li>
+                    <li style="width:100px;">公安网备案</li>
+                    <li style="width:100px;">联系方式</li>
+                    <li style="width:100px;">公司介绍</li>
+                    <li style="width:100px;">监管协会</li>
+                </ul>
+                <div id="showlist"></div>
+                <textarea id="mysid" style="display:none">
+				   {for item in data }
+				   <ul class="ul">
+				       <li style="width:100px; background:#fbfbfb; color:#454545;">${item.name}</li>
+					   <li style="width:100px;  background:#fbfbfb; color:#454545;">${item.jianguan}</li>
+					   <li style="width:100px; background:#fbfbfb; color:#454545;">
+                           <ul>
+                               <li>${item.province}</li>
+                               <li>${item.city}</li>
+                               <li>${item.area}</li>
+                            </ul>
+                       </li>
+					   <li style="width:100px; background:#fbfbfb; color:#454545;">
+                                <li>${item.begin_time}</li>
+                       </li>
+					   <li style="width:100px; background:#fbfbfb; color:#454545;">
+                                <li>${item.rongzi}</li>
+                       </li>
+                       <li style="width:100px; background:#fbfbfb; color:#454545;">
+                                <li>${item.bz_model}</li>
+                       </li>
+                       <li style="width:100px; background:#fbfbfb; color:#454545;">
+                               <ul>
+                                   <li>${item.icp_beian}</li>
+                                   <li>${item.icp_xuke}</li>
+                               </ul>
+                       </li>
+                       <li style="width:100px; background:#fbfbfb; color:#454545;">
+                                <li>${item.police_beian}</li>
+                       </li>
+                       <li style="width:100px; background:#fbfbfb; color:#454545;">
+                                 <ul>
+                                   <li>${item.serve_mobile}</li>
+                                   <li>${item.public_weixin}</li>
+                                </ul>
+                       </li>
+                       <li style="width:100px; background:#fbfbfb; color:#454545;">
+                                <ul>
+                                   <li>${item.addr}</li>
+                                   <li>${item.pt_desc}</li>
+                                   <li>${item.manage_desc}</li>
+                                   <li>${item.company_name}</li>
+                                   <li>${item.com_reg_num}</li>
+                                   <li>${item.legal_person}</li>
+                                   <li>${item.boss}</li>
+                                </ul>
+                       </li>
+					   <li style="width:164px; background:#fbfbfb; color:#454545; text-align:left;" title="${item.msg}">
+					       <div style="width: 164px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;font-size: 14px;">
+						   ${item.background}
+						   </div>
+					   </li>
+				   </ul>
+				   {/for}
+				   </textarea>
+            </div>
+            <div id="pagefooter" class="changepage" autoFill="1"></div>
+        </div>
+    <div style="display: none;" id="pagefooter_hidden">
+        <a href="#" class="pre" onclick="GD._Pload(1);return false;">首页</a>
+        <a href="#" class="pre" onclick="GD._Pload('${pre}');return false;">上一页</a>
+        {var pd=new Array();}
+        {eval}
+        var length=2;
+        var start=cur-length;
+        var end  =cur+length;
+        if (start<1)
+        start=1;
+        if (end>last)
+        end = last;
+        j=0
+        for (i=start;i<=end;i++){
+        pd[j]=i;
+        j++;
+        }
+        {/eval}
+        {for d in pd}
+        {if d==cur}
+        <a href="javascript:void(0);" class="curr">${d}</a>
+        {else}
+        <a href="javascript:void(0);" onclick="GD._load('${d}');return false;">${d}</a>
+        {/if}
+        {/for}
+        {if d!=last}
+        <a href="#" onclick="GD._load('${last}');return false;">${last}</a>
+        {/if}
+        <a href="#" class="next" onclick="GD._load('${next}');return false;">下一页</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function tr() {
+            var b=3;
+
+            try {
+                if(a){
+                    console.log("a undefind");
+                }
+            }catch (e){
+                var c;
+                for(var i=0;i<10000;i++){
+                    c=1;
+                }
+                b=4;
+                console.log(e);
+                return
+            }finally {
+                console.log(b);
+                return
+            }
+        }
+        tr();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

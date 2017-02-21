@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../../js/noCashe.js"></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../css/user.css">
+    <link rel="stylesheet" href="../../../js/popplug/popplug.css">
+    <link rel="stylesheet" href="../../../css/new_pop.css">
+    <script src="../../../js/jquery-1.12.4.js"></script>
+    <script src="../../../js/popplug/popplug.js"></script>
+    <script src="../../../js/js_date_plug/laydate.js"></script>
+    <script src="../../../js/common.js"></script>
+    <script src="../../../js/sectionmanagement/netLoan/platform.js"></script>
+</head>
+<body style="font-size: 12px">
+<div class="set">
+    <ul class="setUl">
+        <li id="refreash"><img src="../../../images/user/bc_07.png" alt=""><span>刷新</span></li>
+        <li id="add"><span>新增</span></li>
+        <li id="modify"><span>修改</span></li>
+        <li id="uploadLogo"><span>上传方logo</span></li>
+        <li id="uploadLogoLong"><span>上传长logo</span></li>
+        <li id="upload"><span>上传图片</span></li>
+        <li id="uploadBC"><span>上传工商证件</span></li>
+        <li id="uploadICP"><span>上传ICP证</span></li>
+        <li class="setUl_li_offset">
+            <input class="setUl_li_offset_input" type="text" placeholder="背景" readonly data-key="background">
+            <div class="setUl_li_offset_div" style="display: none">
+                <p class="setUl_li_offset_p" data-value="">全部</p>
+                <p class="setUl_li_offset_p" data-value="1">银行</p>
+                <p class="setUl_li_offset_p" data-value="2">上市</p>
+                <p class="setUl_li_offset_p" data-value="3">国资</p>
+                <p class="setUl_li_offset_p" data-value="4">风投</p>
+                <p class="setUl_li_offset_p" data-value="5">民营</p>
+            </div>
+        </li>
+        <li class="setUl_li_offset">
+            <input class="setUl_li_offset_input" type="text" placeholder="业务类型" readonly data-key="bus_model">
+            <div class="setUl_li_offset_div" style="display: none">
+                <p class="setUl_li_offset_p" data-value="">全部</p>
+                <p class="setUl_li_offset_p" data-value="1">车贷</p>
+                <p class="setUl_li_offset_p" data-value="2">消费分期</p>
+                <p class="setUl_li_offset_p" data-value="3">供应链</p>
+                <p class="setUl_li_offset_p" data-value="4">房贷</p>
+                <p class="setUl_li_offset_p" data-value="5">企业贷</p>
+                <p class="setUl_li_offset_p" data-value="6">优选理财</p>
+                <p class="setUl_li_offset_p" data-value="7">票据抵押</p>
+                <p class="setUl_li_offset_p" data-value="8">融资租赁</p>
+                <p class="setUl_li_offset_p" data-value="9">藏品质押</p>
+                <p class="setUl_li_offset_p" data-value="10">个人信用贷</p>
+            </div>
+        </li>
+        <li class="setUl_li_offset" id="zcf_cread">
+            <input class="setUl_li_offset_input" type="text" placeholder="存管银行" readonly data-key="bus_model" style="width: 100px;padding-right: 20px">
+            <div class="setUl_li_offset_div" style="display: none;width: 120px">
+
+            </div>
+        </li>
+        <li>
+            <span>
+                <select id="zcf_select">
+                    <option value="1">启用</option>
+                    <option value="0">不启用</option>
+                </select>
+            </span>
+        </li>
+    </ul>
+    <div class="input" id="search">
+        <input type="text" placeholder="平台名称">
+        <img src="../../../images/user/后台2(1)_10.png" alt="">
+    </div>
+</div>
+<div class="table" id="table">
+    <table >
+        <thead>
+        <tr>
+            <th>平台信息</th>
+            <th>联系方式</th>
+            <!--<th>地区</th>-->
+            <th>利率背景</th>
+            <!--<th>背景</th>-->
+            <!--<th>标签</th>-->
+            <th>存管银行</th>
+            <th>业务类型</th>
+            <!--<th>客服电话</th>-->
+            <th>关注点评</th>
+            <th>官方号</th>
+            <th>显示</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <ul>
+                    <li>一两理财</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>杭州XXX</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <!--<td>-->
+                <!--<ul>-->
+                    <!--<li>浙江杭州</li>-->
+                    <!--<li></li>-->
+                    <!--<li></li>-->
+                <!--</ul>-->
+            <!--</td>-->
+            <td>
+                <ul>
+                    <li>2012-12-12</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>民营</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>2222</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>浙江杭州银行</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>车贷</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>待容</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>20</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>20</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>有</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>平台导航</li>
+                    <li>消费金融</li>
+                    <li></li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="containF">
+    <ul class="containFoot" id="containFoot">
+        <li id="first" title="第一页"><img src="../../../images/后台(1)_03.png" alt=""></li>
+        <li id="before" title="前一页"><img src="../../../images/后台(1)_05.png" alt=""></li>
+        <li  class="li"><span>第</span><input type="text" class="inputCF" id="pageSelect"><span>页</span></li>
+        <li id="after" title="后一页"><img src="../../../images/后台(1)_07.png" alt=""></li>
+        <li id="last" title="末页"><img src="../../../images/后台(1)_09.png" alt=""></li>
+        <li class="button" id="pageSelectJump"><span>跳转</span></li>
+        <li class="last">
+            <span>每页</span>
+            <input type="text" id="zcf_cFoot_count" class="inputCF">
+            <span>条</span>
+        </li>
+        <li class="button" id="zcf_cFoot_pageSelectSure"><span>确定</span></li>
+        <li class="last" id="zcf_cFoot_pageCount">总计几页</li>
+    </ul>
+</div>
+<div class="new_pop" id="zcf_new_pop_debitCard">
+    <div class="new_pop_main">
+        <div class="new_pop_head">
+            <span class="new_pop_head_tips">修改信息</span>
+            <div class="new_pop_head_X"><span>X</span></div>
+        </div>
+        <div class="new_pop_body">
+            <div class="new_pop_body_contain">
+                <ul>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>所在地：</span></div>
+                        <div class="new_pop_body_contain_right new_pop_select">
+                            <span>省级：</span>
+                            <select data-base="province">
+                            </select>
+                            <span>市级：</span>
+                            <select data-base="city">
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>平台名称：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="name">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>公司名称：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="company_name">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>最低利率：</span></div>
+                        <div class="new_pop_body_contain_right">
+                        <input type="text" data-base="apr_min">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>最高利率：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="apr_max">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>官网：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="url">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>标签：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="tab">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>背景：</span></div>
+                        <div class="new_pop_body_contain_right new_pop_input_radio">
+                            <label for=""><input type="checkbox" name="if" value="1" data-base="background"><span>银行</span></label>
+                            <label for=""><input type="checkbox" name="if" value="2" data-base="background"><span>上市</span></label>
+                            <label for=""><input type="checkbox" name="if" value="3" data-base="background"><span>国资</span></label>
+                            <label for=""><input type="checkbox" name="if" value="4" data-base="background"><span>风投</span></label>
+                            <label for=""><input type="checkbox" name="if" value="5" data-base="background"><span>民营</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>业务类型：</span></div>
+                            <div class="new_pop_body_contain_right new_pop_select">
+                                <select data-base="bus_model">
+                                    <option value=""></option>
+                                    <option value="1">车贷</option>
+                                    <option value="2">消费金融</option>
+                                    <option value="3">供应链金融</option>
+                                    <option value="4">房贷</option>
+                                    <option value="5">企业贷</option>
+                                    <option value="6">优选理财</option>
+                                    <option value="7">票据抵押</option>
+                                    <option value="8">融资租赁</option>
+                                    <option value="9">藏品质押</option>
+                                    <option value="10">个人信用贷</option>
+                                </select>
+                            </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>消费分期分类：</span></div>
+                            <div class="new_pop_body_contain_right new_pop_select">
+                                <select data-base="xiaofei_type">
+                                    <option value=""></option>
+                                    <option value="1">汽车分期</option>
+                                    <option value="2">租房分期</option>
+                                    <option value="3">信用分期</option>
+                                    <option value="4">购物分期</option>
+                                    <option value="5">校园分期</option>
+                                    <option value="6">教育分期</option>
+                                </select>
+                            </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>分期介绍：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="" data-base="xf_desc">
+                        </div>
+                    </li>
+                    <!--<li>-->
+                        <!--<div class="new_pop_body_contain_left"><span>融资情况：</span></div>-->
+                        <!--<div class="new_pop_body_contain_right">-->
+                            <!--<textarea type="text" data-base="rongzi" rows="6" cols="40"></textarea>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>监管协会：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="jianguan">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>保障模式：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="bz_model">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>ICP备案号：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="icp_beian">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>ICP许可证号：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="icp_xuke">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>公安网备案：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="police_beian">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>客服电话：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="serve_mobile">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>微信号：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="public_weixin">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>办公地址：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="addr">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>平台简介：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <textarea type="text" data-base="pt_desc" rows="6" cols="40"></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>营业执照注册号：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="com_reg_num">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>法人代表：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="legal_person">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>注册资本：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="reg_money">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>实缴资本：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="real_money">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>托管：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="tg_bank">
+                        </div>
+                    </li>
+                    <!--<li>-->
+                        <!--<div class="new_pop_body_contain_left"><span>存管银行：</span></div>-->
+                        <!--<div class="new_pop_body_contain_right">-->
+                            <!--<input type="text" data-base="cg_bank">-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>存管银行：</span></div>
+                        <div class="new_pop_body_contain_right new_pop_select">
+                            <select data-base="cgid">
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>注册开户：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="reg_url">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>APP下载地址：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="down_url">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>上线日期：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="begin_time" onclick="laydate()" class="laydate-icon">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>展示区域：</span></div>
+                        <div class="new_pop_body_contain_right new_pop_input_radio">
+                            <label for=""><input type="checkbox" name="if1" value="1" data-base="show_rule"><span>平台导航</span></label>
+                            <label for=""><input type="checkbox" name="if1" value="2" data-base="show_rule"><span>消费分期</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>是否启用：</span></div>
+                        <div class="new_pop_body_contain_right new_pop_input_radio">
+                            <label for=""><input type="radio" name="if" value="1" data-base="is_open"><span>是</span></label>
+                            <label for=""><input type="radio" name="if" value="0" data-base="is_open"><span>否</span></label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="new_pop_tail">
+            <button class="new_pop_tail_button1" >保存</button>
+            <button class="new_pop_tail_button2" >取消</button>
+        </div>
+    </div>
+</div>
+<div class="new_pop" id="zcf_new_pop_upload">
+    <div class="new_pop_main new_pop_main_max">
+        <div class="new_pop_head">
+            <span class="new_pop_head_tips">修改信息</span>
+            <div class="new_pop_head_X"><span>X</span></div>
+        </div>
+        <div class="new_pop_body new_pop_body_max">
+            <div class="new_pop_body_contain_head">
+                <div class="new_pop_body_contain_head_button">
+                    <img src="http://120.24.43.90/page/youjin1117/youjin/images/plus_03.png" alt="">
+                    <span>选择照片</span>
+                    <input type="file" class="new_pop_inputImg" style="display: none" multiple>
+                </div>
+                <div class="new_pop_body_contain_head_span">
+                    <span>进度显示</span>
+                </div>
+            </div>
+            <div class="new_pop_body_contain">
+                <ul class="ul_img">
+                    <!--<li>-->
+                        <!--<img src="../../../images/4_test.jpg" alt="">-->
+                        <!--<div class="img_div">-->
+                            <!--<span class="span_left">删除</span>-->
+                            <!--<span class="span_right">某某照片.jpg</span>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../images/4_test.jpg" alt="">-->
+                        <!--<div class="img_div">-->
+                            <!--<span class="span_left">删除</span>-->
+                            <!--<span class="span_right">某某照片.jpg</span>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../images/4_test.jpg" alt="">-->
+                        <!--<div class="img_div">-->
+                            <!--<span class="span_left">删除</span>-->
+                            <!--<span class="span_right">某某照片.jpg</span>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../images/4_test.jpg" alt="">-->
+                        <!--<div class="img_div">-->
+                            <!--<span class="span_left">删除</span>-->
+                            <!--<span class="span_right">某某照片.jpg</span>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../images/4_test.jpg" alt="">-->
+                        <!--<div class="img_div">-->
+                            <!--<span class="span_left">删除</span>-->
+                            <!--<span class="span_right">某某照片.jpg</span>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../images/4_test.jpg" alt="">-->
+                        <!--<div class="img_div">-->
+                            <!--<span class="span_left">删除</span>-->
+                            <!--<span class="span_right">某某照片.jpg</span>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../images/4_test.jpg" alt="">-->
+                        <!--<div class="img_div">-->
+                            <!--<span class="span_left">删除</span>-->
+                            <!--<span class="span_right">某某照片.jpg</span>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../images/4_test.jpg" alt="">-->
+                        <!--<div class="img_div">-->
+                            <!--<span class="span_left">删除</span>-->
+                            <!--<span class="span_right">某某照片.jpg</span>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="new_pop_tail">
+            <button class="new_pop_tail_button1" >上传</button>
+            <button class="new_pop_tail_button2" >取消</button>
+        </div>
+    </div>
+</div>
+<div class="new_pop" id="zcf_new_pop_delete">
+    <div class="new_pop_main new_pop_mainTip">
+        <div class="new_pop_head">
+            <span class="new_pop_head_tips">修改信息</span>
+            <div class="new_pop_head_X"><span>X</span></div>
+        </div>
+        <div class="new_pop_body new_pop_body_Xsmall">
+            <div class="new_pop_body_contain">
+                <ul>
+                    <li>
+                        <div class="new_pop_body_contain_middle"><span>确认删除吗？</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="new_pop_tail">
+            <button class="new_pop_tail_button1" >确定</button>
+            <button class="new_pop_tail_button2" >取消</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

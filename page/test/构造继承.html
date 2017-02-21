@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            function Person(name) {
+                this[name]=name;
+            }
+            function Author(name) {
+                Person.call(this,name)
+            }
+            Author.prototype=new Person();
+
+            var A=new Author("jim");
+            console.log(Author.prototype,A);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

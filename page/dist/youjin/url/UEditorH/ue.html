@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../../js/UEditor/ueditor.config.js?v=e9c1b9776d"></script>
+    <script type="text/javascript" src="../../js/UEditor/ueditor.all.js?v=42ba810086"></script>
+    <style>
+        body{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 350px">
+        <script id="zcf_container"></script>
+    </div>
+    <script>
+         //实例化UE
+         var ue = UE.getEditor('zcf_container',{
+             toolbars: [
+                 ['source','undo', 'redo','simpleupload']
+             ],
+             autoHeightEnabled:false,
+             initialFrameHeight:"400px",
+//             zIndex:"10000",
+             autosave:false,
+         });
+         var data12=new Date();
+         console.log('UEdata',data12.getTime());
+        window.onload=function () {
+            ue.ready(function () {
+                var data1={
+                    indentify:"UE",
+                };
+                var data=JSON.stringify(data1);
+                top.postMessage(data,"*");
+                console.log("UE ready");
+            })
+        }
+    </script>
+</body>
+</html>

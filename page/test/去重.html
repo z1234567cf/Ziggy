@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var ary=[3,8,25,5,7,6,4,9,5,2,11,165,1235,142,11,3,6,4,5,9,8,7,1,25,32,12],
+                ary1=ary.concat(12,12);
+        console.log(ary,ary1);
+        //对比去重
+        function noRpeat() {
+            var ary1=this.concat();
+            for(var i=0;i<ary1.length;i++){
+                for(var k=i+1;k<ary1.length;k++){
+                    if(ary1[i]==ary1[k]){
+                        ary1.splice(k,1);
+                        k--;
+                    }
+                }
+            }
+            return ary1;
+        }
+        //对象去重
+        function noRpeatFnObbj(arr) {
+            var ary=arr.concat(),
+                    obj={};
+                    for(var i=0;i<ary.length;i++){
+                        obj[ary[i]]=ary[i];
+                    };
+                    i=0;
+                    ary=[];
+                    for(var item in obj){
+                        if(!obj.hasOwnProperty(item)){
+                            continue;
+                        }
+                        //console.log(obj[item]);
+                        ary[i++]=obj[item];
+                    }
+                    return ary;
+        }
+//console.log(noRpeat.call(ary1));
+        var str=noRpeatFnObbj(ary1).toString();
+console.log(str.split(","));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

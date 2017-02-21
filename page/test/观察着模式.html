@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var pubsub = {};
+        (function (q) {
+
+            var topics = {}, // 回调函数存放的数组
+                    subUid = -1;
+            // 发布方法
+            q.publish = function (topic, args) {
+
+                if (!topics[topic]) {
+                    return false;
+                }
+
+                setTimeout(function () {
+                    var subscribers = topics[topic],
+                            len = subscribers ? subscribers.length : 0;
+
+                    while (len--) {
+                        subscribers[len].func(topic, args);
+                    }
+                }, 0);
+
+                return true;
+
+            };
+            //订阅方法
+            q.subscribe = function (topic, func) {
+
+                if (!topics[topic]) {
+                    topics[topic] = [];
+                }
+
+                var token = (++subUid).toString();
+                topics[topic].push({
+                    token: token,
+                    func: func
+                });
+                return token;
+            };
+            //退订方法
+            q.unsubscribe = function (token) {
+                for (var m in topics) {
+                    if (topics[m]) {
+                        for (var i = 0, j = topics[m].length; i < j; i++) {
+                            if (topics[m][i].token === token) {
+                                topics[m].splice(i, 1);
+                                return token;
+                            }
+                        }
+                    }
+                }
+                return false;
+            };
+        } (pubsub));
+        //来，订阅一个
+        pubsub.subscribe('example1', function (topics, data) {
+            console.log(topics + ": " + data);
+        });
+
+        //发布通知
+        pubsub.publish('example1', 'hello world!');
+        pubsub.publish('example1', ['test', 'a', 'b', 'c']);
+        pubsub.publish('example1', [{ 'color': 'blue' }, { 'text': 'hello'}]);
+        console.log({1:"1"}+":");//console.log()输出的是原对象加上加号变字符串
+        Events = function() {
+            var listen, log, obj, one, remove, trigger, __this;
+            obj = {};
+            __this = this;
+            listen = function( key, eventfn ) {  //把简历扔盒子, key就是联系方式.
+                var stack, _ref;  //stack是盒子
+                stack = ( _ref = obj[key] ) != null ? _ref : obj[ key ] = [];
+                return stack.push( eventfn );
+            };
+            one = function( key, eventfn ) {
+                remove( key );
+                return listen( key, eventfn );
+            };
+            remove = function( key ) {
+                var _ref;
+                return ( _ref = obj[key] ) != null ? _ref.length = 0 : void 0;
+            };
+            trigger = function() {  //面试官打电话通知面试者
+                var fn, stack, _i, _len, _ref, key;
+                key = Array.prototype.shift.call( arguments );
+                stack = ( _ref = obj[ key ] ) != null ? _ref : obj[ key ] = [];
+                for ( _i = 0, _len = stack.length; _i < _len; _i++ ) {
+                    fn = stack[ _i ];
+                    if ( fn.apply( __this,  arguments ) === false) {
+                        return false;
+                    }
+                }
+                return {
+                    listen: listen,
+                    one: one,
+                    remove: remove,
+                    trigger: trigger
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

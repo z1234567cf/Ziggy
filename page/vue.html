@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="youjin/js/vue.js"></script>-->
+    <script src="js/vue.js"></script>
+    <script>
+        window.localStorage["name"]="zcf";
+        sessionStorage["name"]="bobo";
+        console.log(window.localStorage);
+    </script>
+</head>
+<body>
+<a href="vue2.html">11</a>
+    <script>
+        JSON.parse('{"p": 5}', function(k, v) {
+            if (k === '') { return v; }
+            return v * 2;
+        });
+        var z='{"1": 1, "2": 2, "3": {"4": 4, "5": {"z": 6}}}';
+        JSON.parse(z, function(k, v) {
+            console.log( k,v );// 输出当前属性，最后一个为 ""
+            return v*2;       // 返回修改的值
+        });
+        console.log("z",z);
+        ty
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style>
+        iframe{
+            border: 1px solid red;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script>
+//        window.onload=function () {
+//
+//        }
+        window.addEventListener("message",function (e) {
+            var data=e.data;
+            switch (data){
+                case "first":
+                    console.log("first");
+                    break;
+                case "second":
+                    console.log("second");
+                    break;
+                case  "third":
+                    console.log("third");
+                    break;
+                case "four":
+                    console.log("four");
+                    break;
+                default:
+                    console.log("other");
+                    break;
+            }
+        })
+    </script>
+</head>
+<body>
+<iframe src="iframe1.html" frameborder="0"></iframe>
+<iframe src="iframe2.html" frameborder="0"></iframe>
+<iframe src="iframe3.html" frameborder="0"></iframe>
+<iframe src="iframe4.html" frameborder="0"></iframe>
+<button id="test">测试数据</button>
+<button id="remove">移除div</button>
+<button id="add">增加div</button>
+<script>
+//    var button=document.getElementById("button");
+//    button.onclick=function () {
+//        console.log(1);
+//        setTimeout(function () {
+//            console.log(100);
+//        },0);
+//        console.log(2);
+//    };
+    var test=document.getElementById("test");
+    test.onclick=function () {
+            console.log(window.frames[0].$("#divtest").data("data"));
+        //console.log($("#divtest")[0].data)
+    };
+    var remove=document.getElementById("remove");
+    remove.onclick=function () {
+        var div=$("#divtest").detach();
+        $(window.frames[0].document.body).append(div);
+    };
+    var add=document.getElementById("add");
+    add.onclick=function () {
+        if(!$("#divtest").data("data")){
+            $("#divtest").data("data",1);
+        }else {
+            var data=$("#divtest").data("data");
+            data++;
+            $("#divtest").data("data",data);
+        }
+//        if(!$("#divtest")[0].data){
+//            $("#divtest")[0].data=1
+//        }else {
+//            $("#divtest")[0].data++;
+//        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../../js/noCashe.js?v=6642591237"></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../css/user.css?v=ccd9a5039b">
+    <link rel="stylesheet" href="../../../js/popplug/popplug.css?v=55b8f6c402">
+    <link rel="stylesheet" href="../../../css/new_pop.css?v=4a40c63954">
+    <script src="../../../js/jquery-1.12.4.js?v=fb2d334dab"></script>
+    <!--<script type="text/javascript" src="../../../js/UEditor/ueditor.config.js?v=e9c1b9776d"></script>-->
+    <!--<script type="text/javascript" src="../../../js/UEditor/ueditor.all.js?v=42ba810086"></script>-->
+    <script src="../../../js/popplug/popplug.js?v=6eb6a99fc8"></script>
+    <script src="../../../js/js_date_plug/laydate.js?v=2e986020f4"></script>
+    <script src="../../../js/common.js?v=9627fc737b"></script>
+    <script src="../../../js/companyControl/employeeControl/employeeControl.js?v=66a5a13f35"></script>
+</head>
+<body style="font-size: 12px">
+<div class="set">
+    <ul class="setUl">
+        <li id="refreash"><img src="../../../images/user/bc_07.png?v=1a2c9481a7" alt=""><span>刷新</span></li>
+        <li id="zcf_add"><span>新增</span></li>
+        <li id="zcf_modify"><span>修改</span></li>
+        <li id="zcf_resetPw"><span>重置登录密码</span></li>
+        <li id="zcf_frozen"><span>登录冻结</span></li>
+        <li id="zcf_unfrozen"><span>登录解冻</span></li>
+        <li id="zcf_delete"><span>删除</span></li>
+    </ul>
+    <div class="input" id="search">
+        <input type="text">
+        <img src="../../../images/user/后台2(1)_10.png?v=037e5d4cfb" alt="">
+    </div>
+</div>
+<div class="table" id="table">
+    <table >
+        <thead>
+        <tr>
+            <th>员工姓名</th>
+            <th>角色</th>
+            <th>手机号</th>
+            <th>状态</th>
+            <th>最后登录</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <ul>
+                    <li>姓名[登录账号]</li>
+                    <li>男</li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>角色</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>手机号</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>状态</li>
+                    <li>正常/冻结</li>
+                    <li></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>最后登录</li>
+                    <li>2106-11-15 15:15:15</li>
+                    <li></li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="containF">
+    <ul class="containFoot" id="containFoot">
+        <li id="first" title="第一页"><img src="../../../images/后台(1)_03.png?v=d9ad74af3b" alt=""></li>
+        <li id="before" title="前一页"><img src="../../../images/后台(1)_05.png?v=2190e81106" alt=""></li>
+        <li  class="li"><span>第</span><input type="text" class="inputCF" id="pageSelect"><span>页</span></li>
+        <li id="after" title="后一页"><img src="../../../images/后台(1)_07.png?v=1d1469a8f7" alt=""></li>
+        <li id="last" title="末页"><img src="../../../images/后台(1)_09.png?v=d51280c0f3" alt=""></li>
+        <li class="button" id="pageSelectJump"><span>跳转</span></li>
+        <li class="last">
+            <span>每页</span>
+            <input type="text" id="zcf_cFoot_count" class="inputCF">
+            <span>条</span>
+        </li>
+        <li class="button" id="zcf_cFoot_pageSelectSure"><span>确定</span></li>
+        <li class="last" id="zcf_cFoot_pageCount">总计几页</li>
+    </ul>
+</div>
+<div class="new_pop" id="zcf_new_pop_fn1">
+    <div class="new_pop_main">
+        <div class="new_pop_head">
+            <span class="new_pop_head_tips">修改信息</span>
+            <div class="new_pop_head_X"><span>X</span></div>
+        </div>
+        <div class="new_pop_body">
+            <div class="new_pop_body_contain ">
+                <ul>
+                    <!--<li>-->
+                        <!--<div class="new_pop_body_contain_left"><span>登陆账号：</span></div>-->
+                        <!--<div class="new_pop_body_contain_right">-->
+                            <!--<input type="text" data-base="un">-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>手机号：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="mobile" data-disable="0">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>姓名：</span></div>
+                        <div class="new_pop_body_contain_right">
+                            <input type="text" data-base="username" data-disable="0">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="new_pop_body_contain_left"><span>角色：</span></div>
+                        <div class="new_pop_body_contain_right new_pop_select">
+                            <select data-base="rid">
+                            </select>
+                        </div>
+                    </li>
+                    <!--<li>-->
+                        <!--<div class="new_pop_body_contain_left"><span>角色编号：</span></div>-->
+                        <!--<div class="new_pop_body_contain_right">-->
+                            <!--<input type="text" data-base="rid">-->
+                        <!--</div>-->
+                    <!--</li>-->
+
+                    <!--<li style="display: none">-->
+                        <!--<div class="new_pop_body_contain_left"><span>外部评论类型：</span></div>-->
+                        <!--<div class="new_pop_body_contain_right">-->
+                            <!--<input type="text" data-base="out_type" disabled>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="new_pop_body_contain_left"><span>性别 ：</span></div>-->
+                        <!--<div class="new_pop_body_contain_right new_pop_input_radio">-->
+                            <!--<label for=""><input type="radio" name="if" value="0" data-base="sex" ><span>男</span></label>-->
+                            <!--<label for=""><input type="radio" name="if" value="1" data-base="sex" ><span>女</span></label>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="new_pop_tail">
+            <button class="new_pop_tail_button1" >保存</button>
+            <button class="new_pop_tail_button2" >取消</button>
+        </div>
+    </div>
+</div>
+<div class="new_pop" id="zcf_new_pop_fn2">
+    <div class="new_pop_main new_pop_mainTip">
+        <div class="new_pop_head">
+            <span class="new_pop_head_tips">修改信息</span>
+            <div class="new_pop_head_X"><span>X</span></div>
+        </div>
+        <div class="new_pop_body new_pop_body_Xsmall">
+            <div class="new_pop_body_contain">
+                <ul>
+                    <li>
+                        <div class="new_pop_body_contain_middle"><span class="fn_changContent">确认设定为精华吗？</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="new_pop_tail">
+            <button class="new_pop_tail_button1" >确定</button>
+            <button class="new_pop_tail_button2" >取消</button>
+        </div>
+    </div>
+</div>
+<!--<div class="new_pop" id="zcf_new_pop_fn3">-->
+    <!--<div class="new_pop_main new_pop_mainTip">-->
+        <!--<div class="new_pop_head">-->
+            <!--<span class="new_pop_head_tips">修改信息</span>-->
+            <!--<div class="new_pop_head_X"><span>X</span></div>-->
+        <!--</div>-->
+        <!--<div class="new_pop_body new_pop_body_Xsmall">-->
+            <!--<div class="new_pop_body_contain">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<div class="new_pop_body_contain_middle"><span>确认删除吗？</span></div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="new_pop_tail">-->
+            <!--<button class="new_pop_tail_button1" >确定</button>-->
+            <!--<button class="new_pop_tail_button2" >取消</button>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>

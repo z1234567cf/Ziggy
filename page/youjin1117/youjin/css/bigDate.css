@@ -1,0 +1,12 @@
+table.transform tbody tr{
+    height: 20px;
+}
+table.transform thead tr{
+    height: 30px;
+}
+table.transform thead.small tr{
+    height: 24px;
+}
+table.transform tbody td{
+    vertical-align: middle;
+}

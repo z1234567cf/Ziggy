@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //原型链的引用
+        function Person(age,heigh) {
+            this.age=age;
+            this.heigh=heigh;
+        }
+        Person.prototype.showMes=function () {
+            console.log(this.age+"身高"+this.heigh);
+        };
+        var david=new Person("26","178");
+
+        Person.prototype.changeDetail=function (age,heigh) {
+            this.age=age;
+            this.heigh=heigh;
+        };
+        david.changeDetail("23","178");
+        david.showMes();
+        Person.prototype={};// Person.prototype只是负责设置原型对象的引用 实例会一直引用这个对象 即使 Person.prototype在后面引用了新对象 实例的原型跟Person.prototype的内存中存储的对象有关;
+        var boe=new Person("25","180");
+        boe.showMes();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

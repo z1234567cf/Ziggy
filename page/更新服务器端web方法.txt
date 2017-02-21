@@ -1,0 +1,5 @@
+cd /home/html/www.xiangshang.com/web
+svn up 
+http://www.hhlcw.cn/
+http://www.x9jf.com/
+https://www.yilianglicai.com/

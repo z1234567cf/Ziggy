@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            var val=$("button").attr("class");
+            var val_trim=$.trim(val);
+            var val2=val=="new_pop_tail_button1";
+            console.log(val2);
+        })
+    </script>
+</head>
+<body>
+    <button class="       new_pop_tail_button1      " ></button>
+</body>
+</html>
+<!--结论class类中有空格就会不相等 所以必须去除空格-->

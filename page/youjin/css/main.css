@@ -1,0 +1,239 @@
+body{
+    font: 14px "Microsoft Yahei";
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+input,button,img{
+    border: none;
+    outline: none;
+}
+/*主体布局*/
+.major{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size:16px;
+    min-width: 1280px;
+    background-color: #f5f7fa;
+}
+.head{
+    height: 96px;
+    width: 100%;
+    min-width: 1280px;
+    background-color: #2380f4;
+    color: white;
+    position: relative;
+}
+.headL{
+    float: left;
+    height: 96px;
+    line-height: 96px;
+    margin-left: 46px;
+}
+.headL img{
+    vertical-align: middle;
+}
+.headL span{
+    vertical-align: middle;
+    font-size: 22px;
+    font-weight: 700;
+}
+.headM{
+    position: absolute;
+    width: 680px;
+    top: 40px;
+    left: 50%;
+    margin-left: -340px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.headM li{
+    float: left;
+    margin-right: 20px;
+    padding: 0 10px;
+    height: 34px;
+    line-height: 34px;
+}
+.headM li:hover{
+    border-radius: 3px;
+    background-color: white;
+    color: #2380f4;
+    cursor: pointer;
+}
+.headR{
+    float: right;
+    height: 96px;
+    margin-right: 50px;
+    font-size: 12px;
+}
+.headR li{
+    margin-top: 10px;
+}
+.headRli img,.headRli span,.headRli button{
+    vertical-align: middle;
+}
+.headRli{
+    clear: both;
+}
+.headRli img{
+    margin-right: 6px;
+}
+.headRli span{
+    color: #f1ff79;
+}
+.headRli button{
+    box-sizing: border-box;
+    height: 32px;
+    border: 1px solid white;
+    border-radius: 3px;
+    line-height: 32px;
+    padding: 0 10px;
+    background-color: #2380f4;
+    color: white;
+    margin-left: 22px;
+}
+.headRli button:hover{
+    background-color: #ffffff;
+    color: #2380f4;
+}
+.time{
+    float: right;
+    margin-bottom: 18px;
+}
+.contain{
+    overflow: hidden;
+    width: 1280px;
+    margin: auto;
+    height: 870px;
+    background-color: white;
+}
+.containH{
+    height: 198px;
+    background-color: white;
+}
+.contentHeadM{
+    width: 316px;
+    height: 118px;
+    border: 1px solid #959595;
+    float: left;
+    position: relative;
+    margin-top: 40px;
+}
+.contentHeadM{
+    margin-left: 180px;
+    text-align: center;
+}
+.contentHeadM img,.contentHeadM div{
+    float: left;
+}
+.contentHeadM div{
+    width: 180px;
+    height: 118px;
+}
+.contentHeadM img{
+    display: inline-block;
+    margin-top: 14px;
+    margin-left: 27px;
+}
+.contentHeadM div .span1{
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    color: #333333;
+}
+.contentHeadM div .span2{
+    display: block;
+    width: 100%;
+    font-size: 24px;
+    color: #2380f4;
+    margin-top: 8px;
+}
+.contentHeadM.R{
+    margin-left: 300px;
+}
+.containTable{
+   height:588px;
+    background-color: white;
+}
+.containTable thead{
+    background-color: #e6eefa;
+    font-size: 18px;
+    color: #333333;
+}
+.containTable table{
+    border-collapse: collapse;
+}
+.containTable table th,.containTable table td{
+    height: 40px;
+    text-align: center;
+}
+.containTable table td{
+    color: #666666;
+}
+.containTable table tbody tr:nth-child(odd){
+    background-color: #f2f7ff;
+}
+.containTable table th:nth-child(1),.containTable table td:nth-child(1){
+    width: 350px;
+}
+.containTable table th:nth-child(2),.containTable table td:nth-child(2){
+    width: 100px;
+}
+.containTable table th:nth-child(3),.containTable table td:nth-child(3){
+    width: 400px;
+}
+.containTable table th:nth-child(4),.containTable table td:nth-child(4){
+    width:430px;
+}
+.containF{
+    background-color:#f2f7ff;
+    width: 100%;
+    height: 38px;
+    margin-top: 26px;
+    overflow: hidden;
+    line-height: 38px;
+    font-size: 14px;
+    color: #333333;
+}
+.containFoot{
+    float: right;
+    margin-right: 90px;
+}
+.containFoot li{
+    float: left;
+    padding: 0 8px;
+}
+.containFoot li img{
+    vertical-align: middle;
+    cursor: pointer;
+}
+.containFoot .input{
+    width: 36px;
+    height: 26px;
+    box-sizing: border-box;
+    border: 1px solid #959595;
+    text-align: center;
+}
+.containFoot .li span{
+    padding: 0 4px;
+}
+.containFoot .button span{
+    height: 22px;
+    line-height: 22px;
+    background-color: #2380f4;
+    color: white;
+    font-size: 16px;
+    padding: 2px 10px;
+    cursor: pointer;
+}

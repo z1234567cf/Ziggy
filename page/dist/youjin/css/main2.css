@@ -1,0 +1,27 @@
+.containMainL_head{
+    height: 30px;
+    line-height: 30px;
+}
+.containF{
+    left: 200px;
+}
+.containMainL {
+    box-sizing: border-box;
+}
+#iframe{
+    font-size: 12px;
+}
+.containMainL_ul_ul>li{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 0;
+    text-align: center;
+    font-size: 16px;
+    color: #77a7f7;
+}
+.containMainL_ul_ul:last-child>li:last-child{
+    border: none;
+}
+.table tbody tr{
+    height: 30px;
+}

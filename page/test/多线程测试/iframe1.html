@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script>
+        top.postMessage("first","*");
+    </script>
+</head>
+<body>
+        <button id="button">按钮</button>
+        <div id="divtest"></div>
+        <button id="test">测试数据</button>
+        <button id="remove">移除div</button>
+        <button id="add">增加div</button>
+
+        <script>
+            var button=document.getElementById("button");
+            button.onclick=function () {
+                console.log(1);
+                setTimeout(function () {
+                    console.log(100);
+                },0);
+                console.log(2);
+            };
+            var test=document.getElementById("test");
+            test.onclick=function () {
+                console.log($("#divtest").data("data"));
+//                console.log($("#divtest")[0].data)
+            };
+            var remove=document.getElementById("remove");
+            remove.onclick=function () {
+                var div=$("#divtest").detach();
+                $(top.document.body).append(div);
+            };
+            var add=document.getElementById("add");
+            add.onclick=function () {
+                //console.log(typeof $("#divtest").data("data") );
+                if(!$("#divtest").data("data")){
+                    $("#divtest").data("data",1);
+                }else {
+                    var data=$("#divtest").data("data");
+                    data++;
+                    $("#divtest").data("data",data);
+                }
+//                if(!$("#divtest")[0].data){
+//                    $("#divtest")[0].data=1
+//                }else {
+//                    $("#divtest")[0].data++;
+//                }
+            };
+            var div=document.getElementById('divtest');
+            div.addEventListener('click',function () {
+                console.log("2",div);
+            })
+        </script>
+</body>
+</html>

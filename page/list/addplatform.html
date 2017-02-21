@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../jQuery%20date_input/jquery.min.js"></script>
+    <script type="text/javascript" src="../jQuery%20date_input/jquery.date_input.js"></script>
+    <link rel="stylesheet" href="../css/addplatform.css">
+    <link rel="stylesheet" href="../jQuery%20date_input/date_input.css" type="text/css">
+    <script type="text/javascript">$($.date_input.initialize);</script>
+</head>
+<body>
+    <form id="input_groups" method="post" action="http://120.24.43.90/?m=Wd&s=addWd">
+        <p><label for=""><span>平台名称：</span><input type="text" id="name"></label></p>
+        <div id="area_certain">
+            <p><label for=""><span>所在省编号：</span>
+                <select type="text" id="province" >
+                    <option value="">请选择省/市</option>
+                </select>
+            </label></p>
+            <p><label for=""><span>城市编号：</span>
+                <select type="text" id="city">
+                    <option value="">请选择市</option>
+                </select>
+                </label>
+            </p>
+            <p><label for=""><span>区县编号：</span>
+                <select type="text" id="area">
+                    <option value="">请选择县/区</option>
+                </select>
+                </label>
+            </p>
+        </div>
+        <p><label for=""><span>年化收益：</span><input type="text" id="apr"></label></p>
+        <p><label for=""><span>链接：</span><input type="text" id="url"></label></p>
+        <p class="loan"><label for="">
+            <span>背景：</span>
+            <select name="" id="background">
+                <option value="1">国资 </option>
+                <option value="2">银行 </option>
+                <option value="3">保险 </option>
+                <option value="4">上市公司 </option>
+                <option value="5">民营系 </option>
+                <option value="6">风投 </option>
+            </select>
+            </label></p>
+        <p class="loan"><label for="">
+            <span>车贷：</span>
+            <select name="" id="bus_model">
+                <option value="1">车贷  </option>
+                <option value="2">消费金融  </option>
+                <option value="3">供应链金融 </option>
+            </select>
+        </label></p>
+        <div class="clear"></div>
+        <p><label for=""><span>上线时间：</span><input type="text" id="begin_time" name="date" class="date_input"></label></p>
+        <p><label for=""><span>融资情况：</span><input type="text" id="rongzi"></label></p>
+        <p><label for=""><span>监管协会：</span><input type="text" id="jianguan"></label></p>
+        <p><label for=""><span>保障模式：</span><input type="text" id="bz_model"></label></p>
+        <p class="icp"><label for=""><span>icp备案号：</span><input type="text" id="icp_beian"></label></p>
+        <p class="icp"><label for=""><span>icp许可证号：</span><input type="text" id="icp_xuke"></label></p>
+        <p class="icp"><label for=""><span>公安网备案：</span><input type="text" id="police_beian"></label></p>
+        <div class="clear"></div>
+        <p class="contact"><label for=""><span>客服电话：</span><input type="text" id="serve_mobile"></label></p>
+        <p class="contact"><label for=""><span>微信公众号：</span><input type="text" id="public_weixin"></label></p>
+        <div class="clear"></div>
+        <p><label for=""><span>办公地址：</span><input type="text" id="addr"></label></p>
+        <p><label for=""><span>平台简介：</span><input type="text" id="pt_desc"></label></p>
+        <p><label for=""><span>高管简介：</span><input type="text" id="manage_desc"></label></p>
+        <p><label for=""><span>公司名称：</span><input type="text" id="company_name"></label></p>
+        <p><label for=""><span>营业执照注册号：</span><input type="text" id="com_reg_num"></label></p>
+        <p><label for=""><span>法人代表：</span><input type="text" id="legal_person"></label></p>
+        <p><label for=""><span>股东：</span><input type="text" id="boss"></label></p>
+        <p><label for=""><span>存管银行：</span><input type="text" id="cg_bank"></label></p>
+        <p class="img"><label for=""><span>logo：</span><input type="file" id="logo"></label></p>
+        <p class="img"><label for=""><span>证件照：</span><input type="file" id="cred_img"></label></p>
+        <p class="img"><label for=""><span>公司实景图：</span><input type="file" id="com_img"></label></p>
+        <div class="clear"></div>
+        <p id="is_cunguan" class="choice"><label for=""><span>是否存管：</span>
+            是<input type="radio" name="is_cunguan" value="1" checked>
+            否<input type="radio" name="is_cunguan" value="0" >
+        </label></p>
+        <p id="is_open" class="choice"><label for=""><span>是否开放：</span>
+            是<input type="radio" name="is_open" value="1" checked>
+            否<input type="radio" name="is_open" value="0" >
+        </label></p>
+        <div class="clear"></div>
+        <p>
+            <label for=""><span></span><input type="submit" value="提交" id="submit"></label>
+            <label for=""><span></span><input type="button" value="取消" id="cancel"></label>
+            <label for=""><span></span><input type="button" value="设置" id="set"></label>
+        </p>
+    </form>
+    <script src="../js/addplatform.js"></script>
+</body>
+</html>
